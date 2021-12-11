@@ -34,8 +34,9 @@ function HomePage() {
           return;
       }
       uploadImage()
+      setName(null)
+      setConfidenceLevel(null)
   }, [image])
-
 
 
   const fetchImageData = async () => {
@@ -51,25 +52,25 @@ function HomePage() {
       const azureResponse = await fetchAzureData.json();
       const objectName = azureResponse.objects[0].object.toUpperCase();
       const confidence = azureResponse.objects[0].confidence.toFixed(2);
-
+      console.log(azureResponse)
       setName(objectName);
       setConfidenceLevel(confidence);
+      document.querySelector('#file-input').value = null
     } catch (e) {
       console.log(e);
     }
   };
 
-
   return (
     <div>
-      <h1>Home Page</h1>
-      <input type="file" onChange={e => setImage(e.target.files[0])} />
+      <h1>Object Page</h1>
+      <input type="file" id="file-input" onChange={e => setImage(e.target.files[0])} />
       <button type="button" onClick={fetchImageData}>
         Check Image
       </button>
       <h4>Uploaded Image</h4>
-      <img src={url} alt=""/>
-      <h6>{ name && `What is this? ${ name }`}</h6>
+      <img src={url} alt="" width="400px"/>
+      <h6>{name && `What is this? ${ name }`}</h6>
       <h6>{confidenceLevel && `Confidence Level: ${ confidenceLevel }`}</h6>
     </div>
   );
