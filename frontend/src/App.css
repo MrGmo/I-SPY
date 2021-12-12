@@ -1,7 +1,7 @@
+
 .App {
   text-align: center;
 }
-
 
 li:hover, .i-spy:hover {
   color:green;
@@ -9,10 +9,21 @@ li:hover, .i-spy:hover {
   cursor: pointer;
 }
 
-.i-spy:hover {
+.navbar-brand:hover {
   color: green !important;
+  font-weight: bold;
 }
 
 button:hover {
   background: green !important;
+}
+
+.navbar-brand {
+  margin-left: 15px;
+  text-align: center;
+}
+
+.register-login {
+  float: right;
+  padding: 20px;
 }
