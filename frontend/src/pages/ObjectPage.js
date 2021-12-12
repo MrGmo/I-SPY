@@ -64,7 +64,7 @@ function ObjectPage() {
   return (
     <div>
       <h1>Object Page</h1>
-      <input type="file" id="file-input" onChange={e => setImage(e.target.files[0])} />
+      <input type="file" id="file-input" onChange={(e) => setImage(e.target.files[0])} />
       <button type="button" onClick={fetchImageData}>
         Check Image
       </button>

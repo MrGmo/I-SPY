@@ -89,7 +89,7 @@ function FaceRecognitionPage() {
       const neutral = azureResponse[0].faceAttributes.emotion.neutral.toFixed(2);
       const sadness = azureResponse[0].faceAttributes.emotion.sadness.toFixed(2);
       const surprise = azureResponse[0].faceAttributes.emotion.sadness.toFixed(2);
-      console.log(azureResponse)
+
       setGenderState(gender)
       setAgeState(age)
       setHairColorOneState(hairColorOne)
@@ -102,6 +102,7 @@ function FaceRecognitionPage() {
       setNeutralState(neutral)
       setSadnessState(sadness)
       setSurpriseState(surprise)
+      
       document.querySelector("#file-input").value = null;
     } catch (e) {
       console.log(e);
@@ -124,7 +125,7 @@ function FaceRecognitionPage() {
       <h6>{ genderState && `Gender: ${ genderState }` }</h6>
       <h6>{ ageState && `Age: ${ ageState }`}</h6>
       <h6>{ hairColorOneState && `Hair Color: ${ hairColorOneState }, ${ hairColorTwoState }` }</h6>
-      <ul style={{"list-style-type": "none"}}>{genderState && `Emotion Profile: `}
+      <ul style={{"listStyleType": "none"}}>{genderState && `Emotion Profile: `}
           <li>{ angerState && `Anger: ${ angerState }` }</li>
           <li>{ contemptState && `Contempt: ${ contemptState }` }</li>
           <li>{ disgustState && `Disgust: ${ disgustState }` }</li>

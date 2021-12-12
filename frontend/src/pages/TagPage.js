@@ -1,15 +1,15 @@
 // import { useState, useEffect, useRef } from 'react'
 
 
-function AdultPage() {
+function TagPage() {
 
 
     return (
       <div>
-        <h1>Adult Page</h1>
+        <h1>Tag Page</h1>
       </div>
     );
   }
   
   
-  export default AdultPage;
+  export default TagPage;

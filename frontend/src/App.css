@@ -1,3 +1,18 @@
 .App {
   text-align: center;
 }
+
+
+li:hover, .i-spy:hover {
+  color:green;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.i-spy:hover {
+  color: green !important;
+}
+
+button:hover {
+  background: green !important;
+}
