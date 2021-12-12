@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 
 
-function HomePage() {
+function ObjectPage() {
   const [image, setImage] = useState([]);
   const [url, setUrl] = useState([]);
   const [name, setName] = useState('')
@@ -41,11 +41,11 @@ function HomePage() {
 
   const fetchImageData = async () => {
     try {
-      const fetchAzureData = await fetch(process.env.REACT_APP_AZURE_URL, {
+      const fetchAzureData = await fetch(process.env.REACT_APP_AZURE_OBJECT_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Ocp-Apim-Subscription-Key": process.env.REACT_APP_AZURE_SUB_KEY,
+          "Ocp-Apim-Subscription-Key": process.env.REACT_APP_AZURE_SUB_KEY_OBJECT,
         },
         body: JSON.stringify({ url: url }),
       });
@@ -76,4 +76,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default ObjectPage;
