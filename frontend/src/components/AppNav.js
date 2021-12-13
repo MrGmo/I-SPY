@@ -1,8 +1,56 @@
 import { useNavigate } from "react-router-dom";
 
-function AppNav(props) {
 
-    const navigate = useNavigate()
+function AppNav(props) {
+  const navigate = useNavigate();
+  const { user, handleLogout } = props;
+
+
+  const handleHomeClick = () => {
+    if (user === null) {
+      console.log("no logged in user");
+    } else {
+      navigate("/home");
+    }
+  };
+
+  const handleObjectClick = () => {
+    if (user === null) {
+      console.log("no logged in user");
+    } else {
+      navigate("/object");
+    }
+  };
+
+  const handleAdultClick = () => {
+    if (user === null) {
+      console.log("no logged in user");
+    } else {
+      navigate("/adult");
+    }
+  };
+
+  const handleFaceClick = () => {
+    if (user === null) {
+      console.log("no logged in user");
+    } else {
+      navigate("/face-recognition");
+    }
+  };
+
+  const handleTagClick = () => {
+    if (user === null) {
+      console.log("no logged in user");
+    } else {
+      navigate("/tag");
+    }
+  };
+
+  const logoutAndRedirect = () => {
+    handleLogout()
+    alert("You've been logged out! Have a wonderful day :)")
+    navigate('/')
+  }
 
   return (
     <div>
@@ -10,7 +58,7 @@ function AppNav(props) {
         <div className="container-fluid">
           <li
             className="navbar-brand"
-            onClick={() => navigate("/")}
+            onClick={handleHomeClick}
             style={{
               fontWeight: "bold",
               fontSize: "30px",
@@ -32,19 +80,16 @@ function AppNav(props) {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item px-4" onClick={() => navigate("/object")}>
+              <li className="nav-item px-4" onClick={handleObjectClick}>
                 Object
               </li>
-              <li className="nav-item px-4" onClick={() => navigate("/adult")}>
+              <li className="nav-item px-4" onClick={handleAdultClick}>
                 Adult Content
               </li>
-              <li
-                className="nav-item px-4"
-                onClick={() => navigate("/face-recognition")}
-              >
+              <li className="nav-item px-4" onClick={handleFaceClick}>
                 Face Recognition
               </li>
-              <li className="nav-item px-4" onClick={() => navigate("/tag")}>
+              <li className="nav-item px-4" onClick={handleTagClick}>
                 Tag
               </li>
             </ul>
@@ -59,8 +104,24 @@ function AppNav(props) {
                 Search
               </button>
             </form> */}
-            <button className="btn btn-outline-dark login" type="submit" onClick={() => navigate('/login')}>Login</button>
-            <button className="btn btn-outline-dark logout" type="submit" onClick={() => navigate('/')}>Logout</button>
+
+            {user === null ? (
+              <button
+                className="btn btn-dark login-button"
+                type="submit"
+                onClick={() => navigate("/login")}
+              >
+                Login
+              </button>
+            ) : (
+              <button
+                className="btn btn-danger logout-button"
+                type="submit"
+                onClick={ logoutAndRedirect }
+              >
+                Logout
+              </button>
+            )}
           </div>
         </div>
       </nav>

@@ -1,6 +1,6 @@
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import AppNav from './components/AppNav';
 import LandingPage from "./pages/LandingPage.js";
 import LoginPage from "./pages/LoginPage.js";
@@ -18,8 +18,9 @@ import { getLoggedInUser, login } from './api/UserAPI';
 function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [ user, setUser ] = useState(null);
+  const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
+
 
   console.log("USER: ", user)
   useEffect(() => {
@@ -64,11 +65,11 @@ function App() {
     <div className="App">
       <Router>
         <UserContext.Provider value={{ user: user, setUser: handleLogin, error: error }}>
-          <AppNav/>
+          <AppNav user={user} handleLogout={handleLogout}/>
           <Routes>
             <Route exact path='/' element={<LandingPage/>}/>
             <Route exact path='/home' element={<HomePage isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>}/>
-            <Route exact path='/login' element={<LoginPage isLoggedIn={isLoggedIn} handleLogin={handleLogin} handleLogout={handleLogout} user={user} />}/>
+            <Route exact path='/login' element={<LoginPage handleLogin={handleLogin} isLoggedIn={isLoggedIn}/>}/>
             <Route exact path='/register' element={<RegisterPage/>}/>
             <Route exact path='/object' element={<ObjectPage/>}/>
             <Route exact path='/adult' element={<AdultPage/>}/>

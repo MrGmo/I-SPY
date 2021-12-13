@@ -1,4 +1,3 @@
-// import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from "react-router-dom";
 import shadow from '../img/shadow.jpeg'
 
@@ -16,7 +15,7 @@ function LandingPage() {
         <div className="register-login">
             <div align="center">
                 <h4>Not a member?</h4>
-                <button align="left" className="btn btn-outline-light register" type="submit">Register</button>
+                <button align="left" className="btn btn-outline-light register" type="submit" onClick={() => navigate('/register')}>Register</button>
             </div>
         </div>
     </div>

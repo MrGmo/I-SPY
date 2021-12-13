@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { useContext } from "react";
 import UserContext from "../contexts/UserContext.js";
 
 const HomePage = ({ isLoggedIn, handleLogout }) => {
@@ -9,19 +8,8 @@ const HomePage = ({ isLoggedIn, handleLogout }) => {
   return (
     <div>
       <h1>Home Page</h1>
+      <h3>hello</h3>
       {user && <div>Hi {user.username}</div>}
-      {!isLoggedIn ? (
-        <div>
-          <div>
-            <Link to="/login">Login</Link>
-          </div>
-          <div>
-            <Link to="/signup">Sign Up</Link>
-          </div>
-        </div>
-      ) : (
-        <button onClick={handleLogout}>Logout</button>
-      )}
     </div>
   );
 };

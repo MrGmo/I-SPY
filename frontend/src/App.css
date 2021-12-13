@@ -3,6 +3,15 @@
   text-align: center;
 }
 
+body {
+  background-color: rgba(4,7,14,0.9) !important;
+}
+
+.login-button, .logout-button {
+  margin-right: 60px;
+  width: 72px;
+}
+
 li:hover, .i-spy:hover {
   color:green;
   font-weight: bold;
@@ -19,11 +28,11 @@ button:hover {
 }
 
 .navbar-brand {
-  margin-left: 15px;
+  margin-left: 30px;
   text-align: center;
 }
 
 .register-login {
   float: right;
-  padding: 20px;
+  padding: 25px;
 }

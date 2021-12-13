@@ -25,13 +25,13 @@ const RegisterPage = props => {
       <h1>Registration Page</h1>
       <form onSubmit={handleSignup}>
         <label>UserName:</label>
-        <input type="text" placeholder="RonBurgondy" name="username" />
+        <input type="text" name="username" />
         <label>Password:</label>
         <input type="password" name="password" />
         <button type="submit">Register</button>
       </form>
       <div>
-        <Link to="/">Landing Page</Link>
+        <Link to="/">Home</Link>
       </div>
       <div>
         <Link to="/login">Login</Link>
