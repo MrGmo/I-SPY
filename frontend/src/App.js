@@ -1,6 +1,6 @@
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AppNav from './components/AppNav';
 import LandingPage from "./pages/LandingPage.js";
 import LoginPage from "./pages/LoginPage.js";

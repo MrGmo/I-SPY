@@ -3,6 +3,16 @@
   text-align: center;
 }
 
+li:hover, .i-spy:hover, #register-color:hover {
+  color:green;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 117, 21, 0.25)!important;
+} 
+
 body {
   background-color: rgba(4,7,14,0.9) !important;
 }
@@ -12,11 +22,6 @@ body {
   width: 72px;
 }
 
-li:hover, .i-spy:hover {
-  color:green;
-  font-weight: bold;
-  cursor: pointer;
-}
 
 .navbar-brand:hover {
   color: green !important;
@@ -36,3 +41,4 @@ button:hover {
   float: right;
   padding: 25px;
 }
+
