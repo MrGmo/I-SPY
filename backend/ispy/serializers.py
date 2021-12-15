@@ -38,7 +38,21 @@ class UserSerializerWithToken(serializers.ModelSerializer):
         fields = ['token', 'username', 'password']
 
 
+class ScanSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Scan
+        fields = ['id', 'scan_name', 'description']
+
+
 class ObjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Object
-        fields = ['id','search_type','object_url', 'object_name', 'object_confidence_level', 'object_notes']
+        fields = ['id', 'scan_type', 'object_url', 'object_name', 'object_confidence_level', 'object_notes']
+
+
+class FaceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Face
+        fields = ['id', 'scan_type', 'face_url', 'face_name', 'face_gender', 'face_age', 'face_hair_color1', 'face_hair_color2', 'face_anger', 'face_contempt', 'face_disgust', 'face_fear', 'face_happiness', 'face_neutral', 'face_sadness', 'face_surprise', 'face_notes']
+
+    

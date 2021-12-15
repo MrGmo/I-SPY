@@ -62,7 +62,7 @@ TEMPLATES = [
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.AllowAny',
     ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
@@ -79,6 +79,7 @@ JWT_AUTH = {
     'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=7),
     'JWT_RESPONSE_PAYLOAD_HANDLER': 'backend_proj.utils.my_jwt_response_handler'
 }
+
 
 WSGI_APPLICATION = 'backend_proj.wsgi.application'
 

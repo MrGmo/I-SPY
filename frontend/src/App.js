@@ -20,6 +20,8 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
   const [error, setError] = useState(null);
+  const [objects, setObjects] = useState([])
+  const [faces, setFaces] = useState([])
 
 
   console.log("USER: ", user)
@@ -68,12 +70,12 @@ function App() {
           <AppNav user={user} handleLogout={handleLogout}/>
           <Routes>
             <Route exact path='/' element={<LandingPage/>}/>
-            <Route exact path='/home' element={<HomePage isLoggedIn={isLoggedIn} handleLogout={handleLogout}/>}/>
+            <Route exact path='/home' element={<HomePage isLoggedIn={isLoggedIn} handleLogout={handleLogout} objects={objects} setObjects={setObjects} faces={faces} setFaces={setFaces}/>}/>
             <Route exact path='/login' element={<LoginPage handleLogin={handleLogin} isLoggedIn={isLoggedIn}/>}/>
             <Route exact path='/register' element={<RegisterPage/>}/>
-            <Route exact path='/object' element={<ObjectPage/>}/>
+            <Route exact path='/object' element={<ObjectPage objects={objects} setObjects={setObjects}/>}/>
             <Route exact path='/adult' element={<AdultPage/>}/>
-            <Route exact path='/face-recognition' element={<FaceRecognitionPage/>}/>
+            <Route exact path='/face-recognition' element={<FaceRecognitionPage faces={faces} setFaces={setFaces}/>}/>
             <Route exact path='/tag' element={<TagPage/>}/>
           </Routes>
         </UserContext.Provider>

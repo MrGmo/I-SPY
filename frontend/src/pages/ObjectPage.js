@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
+import ObjectAPI from "../api/ObjectAPI.js";
 
 
-function ObjectPage() {
+function ObjectPage(props) {
+  const { objects, setObjects } = props
   const [image, setImage] = useState([]);
   const [url, setUrl] = useState([]);
   const [name, setName] = useState('')
@@ -61,6 +63,23 @@ function ObjectPage() {
     }
   };
 
+
+  const addObject = async () => {
+    const init = {
+      scan_type: 1,
+      object_url: url,
+      object_name: name,
+      object_confidence_level: confidenceLevel,
+      object_notes: 'edit to add notes'
+    }
+    const data = await ObjectAPI.addObject(init)
+    console.log(data)
+    if (data) {
+      setObjects(data)
+    }
+  }
+
+
   return (
     <div>
       <h1>Object Page</h1>
@@ -72,6 +91,7 @@ function ObjectPage() {
       <img src={url} alt="" width="400px"/>
       <h6>{name && `What is this? ${ name }`}</h6>
       <h6>{confidenceLevel && `Confidence Level: ${ confidenceLevel }`}</h6>
+      { name && <button onClick={ addObject }>Save Scan</button>}
     </div>
   );
 }

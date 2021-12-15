@@ -1,6 +1,7 @@
 from django.contrib import admin
-from ispy.models import Object
+from ispy.models import Scan, Object, Face
 
+models = [Scan, Object, Face]
 
-admin.site.register(Object)
+admin.site.register(models)
 

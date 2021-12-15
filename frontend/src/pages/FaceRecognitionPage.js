@@ -1,8 +1,10 @@
 import { useState, useEffect, useRef } from 'react'
+import FaceAPI from "../api/FaceAPI.js";
 
 
-function FaceRecognitionPage() {
+function FaceRecognitionPage(props) {
 
+  const { faces, setFaces } = props
   const [image, setImage] = useState([]);
   const [url, setUrl] = useState([]);
   const [genderState, setGenderState] = useState(null)
@@ -89,7 +91,7 @@ function FaceRecognitionPage() {
       const happiness = azureResponse[0].faceAttributes.emotion.happiness.toFixed(2);
       const neutral = azureResponse[0].faceAttributes.emotion.neutral.toFixed(2);
       const sadness = azureResponse[0].faceAttributes.emotion.sadness.toFixed(2);
-      const surprise = azureResponse[0].faceAttributes.emotion.sadness.toFixed(2);
+      const surprise = azureResponse[0].faceAttributes.emotion.surprise.toFixed(2);
 
       setGenderState(gender)
       setAgeState(age)
@@ -114,6 +116,34 @@ function FaceRecognitionPage() {
   const emotionArray = [angerState, contemptState, disgustState, fearState, happinessState, neutralState, sadnessState, surpriseState]
   console.log(emotionArray)
 
+
+  const addFace = async () => {
+    const init = {
+      scan_type: 2,
+      face_url: url,
+      face_name: 'edit to add name',
+      face_gender: genderState,
+      face_age: ageState,
+      face_hair_color1: hairColorOneState,
+      face_hair_color2: hairColorTwoState,
+      face_anger: angerState,
+      face_contempt: contemptState,
+      face_disgust: disgustState,
+      face_fear: fearState,
+      face_happiness: happinessState,
+      face_neutral: neutralState,
+      face_sadness: sadnessState,
+      face_surprise: surpriseState,
+      face_notes: 'edit to add notes'
+    }
+    const data = await FaceAPI.addFace(init)
+    console.log(data)
+    if (data) {
+      setFaces(data)
+    }
+  }
+
+
   return (
     <div>
       <h1>Face Recogniton Page</h1>
@@ -134,8 +164,9 @@ function FaceRecognitionPage() {
           <li>{ happinessState && `Happiness: ${ happinessState }`} </li>
           <li>{ neutralState && `Neutral: ${ neutralState }`} </li>
           <li>{ sadnessState && `Sadness: ${ sadnessState }`} </li>
-          <li>{ surpriseState && `Suprise: ${ surpriseState }`} </li>
+          <li>{ surpriseState && `Surprise: ${ surpriseState }`} </li>
       </ul>
+      { genderState && <button onClick={ addFace }>Save Scan</button>}
     </div>
   );
 }

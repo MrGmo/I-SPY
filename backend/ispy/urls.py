@@ -5,7 +5,9 @@ from rest_framework.routers import DefaultRouter
 
 
 router = DefaultRouter()
-router.register(r'', ObjectViewSet, basename='objects1')
+router.register(r'scan', ScanViewSet, basename='scan')
+router.register(r'object', ObjectViewSet, basename='object')
+router.register(r'face', FaceViewSet, basename='face')
 
 urlpatterns = [
     path('current_user/', current_user),
