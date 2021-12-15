@@ -13,15 +13,14 @@ li:hover, .i-spy:hover, #register-color:hover {
   box-shadow: 0 0 0 0.2rem rgba(0, 117, 21, 0.25)!important;
 } 
 
-body {
+/* body {
   background-color: rgba(4,7,14,0.9) !important;
-}
+} */
 
 .login-button, .logout-button {
   margin-right: 60px;
   width: 72px;
 }
-
 
 .navbar-brand:hover {
   color: green !important;

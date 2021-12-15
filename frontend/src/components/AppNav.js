@@ -1,9 +1,34 @@
 import { useNavigate } from "react-router-dom";
-
+import { useLocation } from "react-router-dom";
 
 function AppNav(props) {
   const navigate = useNavigate();
   const { user, handleLogout } = props;
+  const { pathname } = useLocation();
+
+  const onLoginPage = pathname === '/login' && user === null
+
+  const renderButtons = () => {
+    if (user === null) {
+      return <button
+      className="btn btn-dark login-button"
+      type="submit"
+      onClick={() => navigate("/login")}
+    >
+      Login
+    </button>
+    } else {
+      return <button
+      className="btn btn-danger logout-button"
+      type="submit"
+      onClick={logoutAndRedirect}
+    >
+      Logout
+    </button>
+    }
+  }
+
+
 
 
   const handleHomeClick = () => {
@@ -47,10 +72,10 @@ function AppNav(props) {
   };
 
   const logoutAndRedirect = () => {
-    handleLogout()
-    alert("You've been logged out! Have a wonderful day :)")
-    navigate('/')
-  }
+    handleLogout();
+    alert("You've been logged out! Have a wonderful day :)");
+    navigate("/");
+  };
 
   return (
     <div>
@@ -104,24 +129,7 @@ function AppNav(props) {
                 Search
               </button>
             </form> */}
-
-            {user === null ? (
-              <button
-                className="btn btn-dark login-button"
-                type="submit"
-                onClick={() => navigate("/login")}
-              >
-                Login
-              </button>
-            ) : (
-              <button
-                className="btn btn-danger logout-button"
-                type="submit"
-                onClick={ logoutAndRedirect }
-              >
-                Logout
-              </button>
-            )}
+            {!onLoginPage && renderButtons()} 
           </div>
         </div>
       </nav>

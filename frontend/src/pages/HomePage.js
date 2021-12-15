@@ -9,7 +9,7 @@ const HomePage = ({ isLoggedIn, handleLogout }) => {
     <div>
       <h1>Home Page</h1>
       <h3>hello</h3>
-      {user && <div>Hi {user.username}</div>}
+      {user && <div>Welcome {user.username}!</div>}
     </div>
   );
 };

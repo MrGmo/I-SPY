@@ -1,3 +1,6 @@
-from django.contrib import admin
+# from django.contrib import admin
+# from ispy.models import Object
 
-# Register your models here.
+
+# admin.site.register(Object)
+

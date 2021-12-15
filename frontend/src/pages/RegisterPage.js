@@ -42,6 +42,8 @@ const RegisterPage = props => {
                       <div className="form-outline form-black mb-4">
                         <input
                           type="text"
+                          minLength="6"
+                          maxLength ="30"
                           className="form-control form-control-lg"
                           placeholder="Username"
                           name="username"
@@ -51,9 +53,13 @@ const RegisterPage = props => {
                       <div className="form-outline form-white mb-4">
                         <input
                           type="password"
-                          className="form-control form-control-lg"
+                          className="form-control validate form-control-lg"
+                          id="inputValidationEx2"
                           placeholder="Password"
                           name="password"
+                          pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                          title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                          required
                         />
                       </div>
                       {/* 

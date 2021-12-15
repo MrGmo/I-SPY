@@ -5,6 +5,10 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .serializers import UserSerializer, UserSerializerWithToken
+from .models import *
+from .serializers import *
+from rest_framework import viewsets
+
 
 ## The core of this functionality is the api_view decorator, which takes a list of HTTP methods that your view should respond to.
 @api_view(['GET'])
@@ -30,3 +34,8 @@ class UserList(APIView):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+# class ObjectViewSet(viewsets.ModelViewSet):
+#     queryset = Object.objects.all()
+#     serializer_class = ObjectSerializer
