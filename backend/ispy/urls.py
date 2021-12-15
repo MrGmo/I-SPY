@@ -3,11 +3,12 @@ from .views import current_user, UserList
 from .views import *
 from rest_framework.routers import DefaultRouter
 
+
+router = DefaultRouter()
+router.register(r'', ObjectViewSet, basename='objects1')
+
 urlpatterns = [
     path('current_user/', current_user),
-    path('users/', UserList.as_view())
+    path('users/', UserList.as_view()),
+    *router.urls
 ]
-
-# router = DefaultRouter()
-# router.register(r'object', ObjectViewSet, basename='object-search')
-# urlpatterns = router.urls

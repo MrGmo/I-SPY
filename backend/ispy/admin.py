@@ -1,6 +1,6 @@
-# from django.contrib import admin
-# from ispy.models import Object
+from django.contrib import admin
+from ispy.models import Object
 
 
-# admin.site.register(Object)
+admin.site.register(Object)
 

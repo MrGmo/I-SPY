@@ -38,7 +38,7 @@ class UserSerializerWithToken(serializers.ModelSerializer):
         fields = ['token', 'username', 'password']
 
 
-# class ObjectSerializer(serializers.ModelSerializer):
-#     class Meta:
-#         model = Object
-#         fields = ['id','search_type','object_url', 'object_name', 'object_confidence_level', 'object_notes']
+class ObjectSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Object
+        fields = ['id','search_type','object_url', 'object_name', 'object_confidence_level', 'object_notes']

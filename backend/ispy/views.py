@@ -36,6 +36,6 @@ class UserList(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-# class ObjectViewSet(viewsets.ModelViewSet):
-#     queryset = Object.objects.all()
-#     serializer_class = ObjectSerializer
+class ObjectViewSet(viewsets.ModelViewSet):
+    queryset = Object.objects.all()
+    serializer_class = ObjectSerializer
