@@ -140,6 +140,8 @@ function FaceRecognitionPage(props) {
     console.log(data)
     if (data) {
       setFaces(data)
+      alert('Saved scan to database')
+      window.location.reload()
     }
   }
 

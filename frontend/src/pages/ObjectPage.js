@@ -76,6 +76,8 @@ function ObjectPage(props) {
     console.log(data)
     if (data) {
       setObjects(data)
+      alert('Saved scan to database')
+      window.location.reload()
     }
   }
 
