@@ -60,7 +60,7 @@ function AppNav(props) {
     if (user === null) {
       console.log("no logged in user");
     } else {
-      navigate("/face-recognition");
+      navigate("/face-detection");
     }
   };
 
@@ -109,14 +109,14 @@ function AppNav(props) {
               <li className="nav-item px-4" onClick={handleObjectClick}>
                 Object
               </li>
-              <li className="nav-item px-4" onClick={handleAdultClick}>
-                Adult Content
-              </li>
               <li className="nav-item px-4" onClick={handleFaceClick}>
-                Face Recognition
+                Face Detection
               </li>
               <li className="nav-item px-4" onClick={handleTagClick}>
                 Tag
+              </li>
+              <li className="nav-item px-4" onClick={handleAdultClick}>
+                Adult Content
               </li>
             </ul>
             {/* <form className="="d-flex">
