@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import UserContext from "../contexts/UserContext.js";
 import { useNavigate } from 'react-router-dom';
 import ObjectAPI from "../api/ObjectAPI.js";
@@ -7,11 +7,14 @@ import FaceAPI from "../api/FaceAPI.js";
 import FaceList from "../components/FaceList.js"
 
 
+
 function HomePage (props) {
+
   const { objects, setObjects, faces, setFaces } = props
   const userContext = useContext(UserContext);
   const { user } = userContext;
   const navigate = useNavigate()
+
 
   useEffect(() => {
     const getObjects = async () => {
@@ -20,7 +23,6 @@ function HomePage (props) {
         setObjects(data)
       }
     }
-
     getObjects()
   }, [])
 
@@ -34,18 +36,17 @@ function HomePage (props) {
         setFaces(data)
       }
     }
-
     getFaces()
   }, [])
 
   console.log(faces)
+
 
   return (
 
     <div>
       <h1>Home Page</h1>
       { user && <h1>Welcome {user.username}!</h1> }
-      <hr/>
       <ObjectList objects={objects}/>
       <FaceList faces={faces}/>
     </div>

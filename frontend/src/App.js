@@ -1,6 +1,6 @@
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import AppNav from './components/AppNav';
 import LandingPage from "./pages/LandingPage.js";
 import LoginPage from "./pages/LoginPage.js";
@@ -47,12 +47,16 @@ function App() {
       username: evt.target.username.value,
       password: evt.target.password.value,
     }
-    let response = await login(userObject);
-    let data = await response.json();
-    if (data.token) {
-      localStorage.setItem("auth-user", `${data.token}`);
-      setIsLoggedIn(true);
-      setUser(data.user);
+    try {
+      let response = await login(userObject);
+      let data = await response.json();
+      if (data.token) {
+        localStorage.setItem("auth-user", `${data.token}`);
+        setIsLoggedIn(true);
+        setUser(data.user);
+      }
+    } catch (e) {
+      console.log(e)
     }
   }
 

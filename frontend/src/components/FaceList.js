@@ -1,4 +1,3 @@
-import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function FaceList (props) {
@@ -12,7 +11,7 @@ function FaceList (props) {
 
     return faces.map((face,index) => {
       return (
-        <ul style={{listStyleType: "none"}}>
+        <ul key={index+1} style={{listStyleType: "none"}}>
           <li>Scan Type: { face.scan_type }</li>
           <li>Face Id: { face.id }</li>
           <li>Face URL: { face.face_url }</li>

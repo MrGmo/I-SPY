@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
+
 function AppNav(props) {
   const navigate = useNavigate();
   const { user, handleLogout } = props;

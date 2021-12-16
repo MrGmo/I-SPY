@@ -1,11 +1,13 @@
-import { Link } from "react-router-dom";
-import HomePage from "./HomePage";
+import { useNavigate, Link } from "react-router-dom";
+
 
 function LoginPage(props) {
+  
   const { handleLogin, isLoggedIn } = props;
+  const navigate = useNavigate()
 
   if (isLoggedIn) {
-    return <HomePage />;
+    navigate('/home')
   }
 
   return (

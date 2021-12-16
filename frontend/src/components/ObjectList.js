@@ -1,4 +1,3 @@
-import { Table } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function ObjectList (props) {
@@ -12,7 +11,7 @@ function ObjectList (props) {
 
     return objects.map((obj,index) => {
       return (
-        <ul style={{listStyleType: "none"}}>
+        <ul key={index+1} style={{listStyleType: "none"}}>
           <li>Scan Type: { obj.scan_type }</li>
           <li>Object Id: { obj.id }</li>
           <li>Object URL: { obj.object_url }</li>
