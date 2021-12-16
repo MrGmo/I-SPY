@@ -11,7 +11,7 @@ function FaceList(props) {
     return faces.map((face, index) => {
       return (
         <div>
-          <ul key={index + 1} style={{ listStyleType: "none" }}>
+          <ul style={{ listStyleType: "none" }}>
             <li>Scan Type: {face.scan_type}</li>
             <li>Face Id: {face.id}</li>
             <li>Face URL: {face.face_url}</li>

@@ -14,7 +14,7 @@ function ObjectList (props) {
       return (
         <div>
 
-        <ul key={index+1} style={{listStyleType: "none"}}>
+        <ul style={{listStyleType: "none"}}>
           <li>Scan Type: { obj.scan_type }</li>
           <li>Object Id: { obj.id }</li>
           <li>Object URL: { obj.object_url }</li>
