@@ -30,9 +30,7 @@ function ObjectDetailPage(props) {
     return (
       <div>
          <ul style={{listStyleType: "none"}}>
-          <li>Scan Type: { object.scan_type }</li>
-          <li>Object Id: { object.id }</li>
-          <li>Object URL: <img src={ object.object_url } alt="pic" />{ object.object_url }</li>
+          <li><img src={ object.object_url } alt="pic" /></li>
           <li>Object Name: { object.object_name }</li>
           <li>Confidence Level: { object.object_confidence_level }</li>
           <li>Notes: { object.object_notes }</li>
@@ -49,9 +47,9 @@ function ObjectDetailPage(props) {
     }
   };
 
-  const editObject = objectID => {
+  const editObject = async objectID => {
     // console.log (objectID)
-    // const data = await ObjectAPI.editObject(objectObj, objectID);
+    // const data = await ObjectAPI.editObject(objectID);
     navigate(`/object/${objectID}/edit`)
   };
 

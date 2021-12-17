@@ -1,7 +1,8 @@
 import { useNavigate,useParams } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import ObjectAPI from "../api/ObjectAPI";
-import { useEffect, useState } from 'react' 
+import { useEffect, useState } from 'react'
+import Image from 'react-bootstrap/Image'
 
 function EditObjectDetailPage(props) {
 
@@ -21,6 +22,7 @@ function EditObjectDetailPage(props) {
       }
   }, [object])
 
+
   const getNewObject = async (event) => {
     event.preventDefault()
 
@@ -32,28 +34,27 @@ function EditObjectDetailPage(props) {
       object_confidence_level: event.target.elements[4].value
     }
 
-    console.log(objectData)
-
     const data = await ObjectAPI.editObject(objectData, params.objectID)
     if (data) {
       navigate('/home')
     }
   }
 
-
+  console.log(object)
   return (
+
     <div className="container">
       <h2>Edit Object Page</h2>
       <div className="row justify-content-center">
         <Form onSubmit={(event) => getNewObject(event)} className="form-group col-md-6">
           <Form.Group>
             <Form.Label>Object ID</Form.Label>
-            <Form.Control placeholder="object id" value={object && object.id}/>
+            <Form.Control placeholder="object id" plaintext readOnly defaultValue={object && object.id}/>
           </Form.Group>
           <br />
           <Form.Group>
             <Form.Label>Scan Type</Form.Label>
-            <Form.Control placeholder="scan type" value={object && object.scan_type}/>
+            <Form.Control placeholder="scan type" plaintext readOnly defaultValue={object && object.scan_type}/>
           </Form.Group>
           <br />
           <Form.Group>
@@ -68,7 +69,7 @@ function EditObjectDetailPage(props) {
           <br />
           <Form.Group>
             <Form.Label>Confidence Level</Form.Label>
-            <Form.Control placeholder="confidence level" value={object && object.object_confidence_level}/>
+            <Form.Control placeholder="confidence level" plaintext readOnly defaultValue={object && object.object_confidence_level}/>
           </Form.Group>
           <br />
           <Form.Group>
