@@ -6,8 +6,10 @@ import LandingPage from "./pages/LandingPage.js";
 import LoginPage from "./pages/LoginPage.js";
 import RegisterPage from "./pages/RegisterPage.js";
 import ObjectDetailPage from "./pages/ObjectDetailPage.js";
+import FaceDetailPage from "./pages/FaceDetailPage.js";
 import HomePage from "./pages/HomePage.js";
 import ObjectPage from "./pages/ObjectPage.js";
+import EditObjectDetailPage from "./pages/EditObjectDetailPage.js";
 import AdultPage from "./pages/AdultPage.js";
 import FaceDetectionPage from "./pages/FaceDetectionPage.js";
 import TagPage from "./pages/TagPage.js";
@@ -80,8 +82,10 @@ function App() {
             <Route exact path='/register' element={<RegisterPage/>}/>
             <Route exact path='/object' element={<ObjectPage objects={objects} setObjects={setObjects}/>}/>
             <Route exact path='/object/:objectID' element={<ObjectDetailPage/>}/>
+            <Route exact path="object/:objectID/edit" element={<EditObjectDetailPage />} />
             <Route exact path='/adult' element={<AdultPage/>}/>
             <Route exact path='/face-detection' element={<FaceDetectionPage faces={faces} setFaces={setFaces}/>}/>
+            <Route exact path='/face-detection/:faceID' element={<FaceDetailPage />}/>
             <Route exact path='/tag' element={<TagPage/>}/>
           </Routes>
         </UserContext.Provider>

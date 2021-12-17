@@ -45,14 +45,14 @@ function ObjectDetailPage(props) {
     const data = await ObjectAPI.deleteObject(objectID);
     if (data) {
       setObject(data);
-      navigate("/");
+      navigate("/home");
     }
   };
 
   const editObject = objectID => {
     // console.log (objectID)
-    // const data = await ObjectAPI.editObject(objectID);
-      navigate(`/${objectID}/edit`)
+    // const data = await ObjectAPI.editObject(objectObj, objectID);
+    navigate(`/object/${objectID}/edit`)
   };
 
   return (

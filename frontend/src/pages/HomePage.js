@@ -78,9 +78,7 @@ function HomePage(props) {
               </p>
             </div>
             <ul className="list-group list-group-flush">
-              <li className="list-group-item">Cras justo odio</li>
-              <li className="list-group-item">Dapibus ac facilisis in</li>
-              <li className="list-group-item">Vestibulum at eros</li>
+              <FaceList faces={ faces }/>
             </ul>
             <div className="card-body">
               <a href="#" className="card-link">
