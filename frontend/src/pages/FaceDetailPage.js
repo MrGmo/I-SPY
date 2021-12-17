@@ -66,7 +66,7 @@ function FaceDetailPage(props) {
   const editFace = faceID => {
     // console.log (faceID)
     // const data = await faceAPI.editFace(faceID);
-    navigate(`/${faceID}/edit`);
+    navigate(`/face-detection/${faceID}/edit`);
   };
 
   return (

@@ -13,7 +13,7 @@ function FaceList(props) {
     return faces.map((face, index) => {
       return (
         <div>
-          <li className="list-group-item" object={face}><Link to={`/face-detection/${face.id}/`}>{ face.face_name }</Link></li>
+          <li key={index+1} className="list-group-item" face={face}><Link key={index+1} to={`/face-detection/${face.id}/`}>{ face.face_name }</Link></li>
         </div>
       );
     });

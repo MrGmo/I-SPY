@@ -13,7 +13,7 @@ function ObjectList (props) {
     return objects.map((object,index) => {
       return (
         <div>
-          <li className="list-group-item" object={object}><Link to={`/object/${object.id}/`}>{ object.object_name }</Link></li>
+          <li key={index+1} className="list-group-item" object={object}><Link key={index+1} to={`/object/${object.id}/`}>{ object.object_name }</Link></li>
       </div>
       )
     })

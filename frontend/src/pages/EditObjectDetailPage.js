@@ -2,7 +2,6 @@ import { useNavigate,useParams } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 import ObjectAPI from "../api/ObjectAPI";
 import { useEffect, useState } from 'react'
-import Image from 'react-bootstrap/Image'
 
 function EditObjectDetailPage(props) {
 
@@ -45,6 +44,7 @@ function EditObjectDetailPage(props) {
 
     <div className="container">
       <h2>Edit Object Page</h2>
+      {  object && <img src={ object.object_url } alt="pic" />}
       <div className="row justify-content-center">
         <Form onSubmit={(event) => getNewObject(event)} className="form-group col-md-6">
           <Form.Group>
@@ -59,12 +59,12 @@ function EditObjectDetailPage(props) {
           <br />
           <Form.Group>
             <Form.Label>Object URL</Form.Label>
-            <Form.Control placeholder="object url" defaultValue={object && object.object_url}/>
+            <Form.Control placeholder="object url" plaintext readOnly defaultValue={object && object.object_url}/>
           </Form.Group>
           <br />
           <Form.Group>
             <Form.Label>Object Name</Form.Label>
-            <Form.Control placeholder="object url" defaultValue={object && object.object_name}/>
+            <Form.Control placeholder="object url" plaintext readOnly defaultValue={object && object.object_name}/>
           </Form.Group>
           <br />
           <Form.Group>

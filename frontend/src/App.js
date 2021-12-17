@@ -1,6 +1,6 @@
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AppNav from './components/AppNav';
 import LandingPage from "./pages/LandingPage.js";
 import LoginPage from "./pages/LoginPage.js";
@@ -10,6 +10,7 @@ import FaceDetailPage from "./pages/FaceDetailPage.js";
 import HomePage from "./pages/HomePage.js";
 import ObjectPage from "./pages/ObjectPage.js";
 import EditObjectDetailPage from "./pages/EditObjectDetailPage.js";
+import EditFaceDetailPage from "./pages/EditFaceDetailPage.js";
 import AdultPage from "./pages/AdultPage.js";
 import FaceDetectionPage from "./pages/FaceDetectionPage.js";
 import TagPage from "./pages/TagPage.js";
@@ -85,6 +86,7 @@ function App() {
             <Route exact path="object/:objectID/edit" element={<EditObjectDetailPage />} />
             <Route exact path='/adult' element={<AdultPage/>}/>
             <Route exact path='/face-detection' element={<FaceDetectionPage faces={faces} setFaces={setFaces}/>}/>
+            <Route exact path="face-detection/:faceID/edit" element={<EditFaceDetailPage />} />
             <Route exact path='/face-detection/:faceID' element={<FaceDetailPage />}/>
             <Route exact path='/tag' element={<TagPage/>}/>
           </Routes>

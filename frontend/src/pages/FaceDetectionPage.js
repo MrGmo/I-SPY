@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import FaceAPI from "../api/FaceAPI.js";
 
 
-function FaceRecognitionPage(props) {
+function FaceDetectionPage(props) {
 
   const { faces, setFaces } = props
   const [image, setImage] = useState([]);
@@ -148,7 +148,7 @@ function FaceRecognitionPage(props) {
 
   return (
     <div>
-      <h1>Face Recogniton Page</h1>
+      <h1>Face Detection Page</h1>
       <input type="file" id="file-input" onChange={e => setImage(e.target.files[0])} />
       <button type="button" onClick={fetchImageData}>
         Check Image
@@ -173,4 +173,4 @@ function FaceRecognitionPage(props) {
   );
 }
 
-export default FaceRecognitionPage;
+export default FaceDetectionPage;
