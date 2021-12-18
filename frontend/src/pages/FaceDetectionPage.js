@@ -105,7 +105,6 @@ function FaceDetectionPage(props) {
       setNeutralState(neutral)
       setSadnessState(sadness)
       setSurpriseState(surprise)
-      
       document.querySelector("#file-input").value = null;
     } catch (e) {
       console.log(e);
@@ -114,7 +113,6 @@ function FaceDetectionPage(props) {
 
 
   const emotionArray = [angerState, contemptState, disgustState, fearState, happinessState, neutralState, sadnessState, surpriseState]
-  console.log(emotionArray)
 
 
   const addFace = async () => {
@@ -137,7 +135,6 @@ function FaceDetectionPage(props) {
       face_notes: 'edit to add notes'
     }
     const data = await FaceAPI.addFace(init)
-    console.log(data)
     if (data) {
       setFaces(data)
       alert('Saved scan to database')

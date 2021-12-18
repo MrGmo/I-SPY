@@ -21,7 +21,6 @@ function ObjectPage(props) {
         body: data,
       });
       const response = await fetchData.json();
-      console.log(response.url);
       setUrl(response.url);
     } catch (e) {
       console.log(e);
@@ -54,7 +53,6 @@ function ObjectPage(props) {
       const azureResponse = await fetchAzureData.json();
       const objectName = azureResponse.objects[0].object.toUpperCase();
       const confidence = azureResponse.objects[0].confidence.toFixed(2);
-      console.log(azureResponse)
       setName(objectName);
       setConfidenceLevel(confidence);
       document.querySelector('#file-input').value = null
@@ -73,14 +71,12 @@ function ObjectPage(props) {
       object_notes: 'edit to add notes'
     }
     const data = await ObjectAPI.addObject(init)
-    console.log(data)
     if (data) {
       setObjects(data)
       alert('Saved scan to database')
       window.location.reload()
     }
   }
-
 
   return (
     <div>

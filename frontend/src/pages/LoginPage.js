@@ -1,13 +1,11 @@
 import { useNavigate, Link } from "react-router-dom";
 
-
 function LoginPage(props) {
-  
   const { handleLogin, isLoggedIn } = props;
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   if (isLoggedIn) {
-    navigate('/home')
+    navigate("/home");
   }
 
   return (
@@ -44,12 +42,6 @@ function LoginPage(props) {
                           name="password"
                         />
                       </div>
-                      {/* 
-                    <p className="small mb-5 pb-lg-2">
-                      <a className="text-white-50" href="#!">
-                        Forgot password?
-                      </a>
-                    </p> */}
 
                       <button
                         className="btn btn-outline-dark btn-lg px-5"
@@ -74,7 +66,11 @@ function LoginPage(props) {
                   <div>
                     <p className="mb-0">
                       Don't have an account?{" "}
-                      <Link to="/register" style={{ textDecoration: 'none' }} className="text-black">
+                      <Link
+                        to="/register"
+                        style={{ textDecoration: "none" }}
+                        className="text-black"
+                      >
                         <span id="register-color">Register</span>
                       </Link>
                     </p>

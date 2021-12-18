@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import FaceAPI from "../api/FaceAPI";
+import { Image } from 'react-bootstrap'
 
 function FaceDetailPage(props) {
   const [face, setFace] = useState(null);
@@ -8,9 +9,7 @@ function FaceDetailPage(props) {
   const params = useParams();
   const navigate = useNavigate();
 
-  console.log(face);
-
-  // effects
+  
   useEffect(() => {
     const getFace = async () => {
       const data = await FaceAPI.fetchFaceByID(params.faceID);
@@ -22,19 +21,15 @@ function FaceDetailPage(props) {
     getFace();
   }, [params.faceID]);
 
-  // render
+  
   const renderFace = () => {
     if (!face) return null;
-    console.log(face);
     return (
       <div>
         <ul style={{ listStyleType: "none" }}>
           <li>Scan Type: {face.scan_type}</li>
           <li>Face Id: {face.id}</li>
-          <li>
-            Object URL: <img src={face.face_url} alt="pic" />
-            {face.face_url}
-          </li>
+          <li><Image src={ face.face_url } width={500} height={300} mode='fit' /></li>
           <li>Face Name: {face.face_name}</li>
           <li>Face Gender: {face.face_gender}</li>
           <li>Face Age: {face.face_age}</li>
@@ -64,8 +59,6 @@ function FaceDetailPage(props) {
   };
 
   const editFace = faceID => {
-    // console.log (faceID)
-    // const data = await faceAPI.editFace(faceID);
     navigate(`/face-detection/${faceID}/edit`);
   };
 

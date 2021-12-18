@@ -2,7 +2,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signupUser } from "../api/UserAPI";
 
-const RegisterPage = props => {
+function RegisterPage (props) {
   let navigate = useNavigate();
 
   const handleSignup = async evt => {
@@ -13,7 +13,6 @@ const RegisterPage = props => {
     };
     let response = await signupUser(userObject);
     let data = await response.json();
-    console.log(data)
     if (data.error) {
       console.log("there was an error signing up");
     } else {
@@ -62,13 +61,6 @@ const RegisterPage = props => {
                           required
                         />
                       </div>
-                      {/* 
-                    <p className="small mb-5 pb-lg-2">
-                      <a className="text-white-50" href="#!">
-                        Forgot password?
-                      </a>
-                    </p> */}
-
                       <button
                         className="btn btn-outline-dark btn-lg px-5"
                         type="submit"

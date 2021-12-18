@@ -29,46 +29,11 @@ function AppNav(props) {
     }
   }
 
-
-
-
   const handleHomeClick = () => {
     if (user === null) {
       console.log("no logged in user");
     } else {
       navigate("/home");
-    }
-  };
-
-  const handleObjectClick = () => {
-    if (user === null) {
-      console.log("no logged in user");
-    } else {
-      navigate("/object");
-    }
-  };
-
-  const handleAdultClick = () => {
-    if (user === null) {
-      console.log("no logged in user");
-    } else {
-      navigate("/adult");
-    }
-  };
-
-  const handleFaceClick = () => {
-    if (user === null) {
-      console.log("no logged in user");
-    } else {
-      navigate("/face-detection");
-    }
-  };
-
-  const handleTagClick = () => {
-    if (user === null) {
-      console.log("no logged in user");
-    } else {
-      navigate("/tag");
     }
   };
 
@@ -106,20 +71,9 @@ function AppNav(props) {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item px-4" onClick={handleObjectClick}>
-                Object
-              </li>
-              <li className="nav-item px-4" onClick={handleFaceClick}>
-                Face Detection
-              </li>
-              <li className="nav-item px-4" onClick={handleTagClick}>
-                Tag
-              </li>
-              <li className="nav-item px-4" onClick={handleAdultClick}>
-                Adult Content
-              </li>
+              <li className="nav-item px-4" style={{ fontFamily: "cursive" }}>636f6d707574657220766973696f6e</li>
             </ul>
-            {/* <form className="="d-flex">
+            {/* <form className="d-flex">
               <input
                 className="form-control me-2"
                 type="search"

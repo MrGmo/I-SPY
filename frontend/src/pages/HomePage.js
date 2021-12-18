@@ -50,7 +50,7 @@ function HomePage(props) {
               <div className="card-body">
                 <h5 className="card-title">Object</h5>
                 <p className="card-text">
-                  Object detection is a computer vision technique that allows us
+                  Object detection is a machine learning technique that allows us
                   to identify and locate objects in an image.
                 </p>
               </div>
@@ -71,7 +71,7 @@ function HomePage(props) {
               <div className="card-body">
                 <h5 className="card-title">Face Detection</h5>
                 <p className="card-text">
-                  Face detection is an AI based computer technology used to find
+                  Face detection is machine learning technique used to find
                   and identify human faces in digital images.
                 </p>
               </div>
@@ -84,37 +84,43 @@ function HomePage(props) {
 
         <div class="row mx-3">
           <div className="card mx-auto" style={{ width: "18rem" }}>
+          <Link
+              to="/tag"
+              style={{ textDecoration: "none", color: "black" }}
+            >
             <img className="card-img-top" src={tag} alt="image"></img>
             <div className="card-body">
               <h5 className="card-title">Tag</h5>
               <p className="card-text">
-                Tag detection is a computer vision technique that forms the
+                Tag detection is a machine learning technique that forms the
                 foundation for an image description on the web.
               </p>
             </div>
+            </Link>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">Cras justo odio</li>
-              <li className="list-group-item">Dapibus ac facilisis in</li>
-              <li className="list-group-item">Vestibulum at eros</li>
             </ul>
           </div>
         </div>
 
         <div class="row mx-3">
           <div className="card mx-auto" style={{ width: "18rem" }}>
+          <Link
+              to="/adult"
+              style={{ textDecoration: "none", color: "black" }}
+            >
             <img className="card-img-top" src={adult} alt="image"></img>
             <div className="card-body">
               <h5 className="card-title">Adult Content</h5>
               <p className="card-text">
-                Adult content detection is a computer vision technique that
+                Adult content detection is a machine learning technique that
                 allows developers to restrict the display of these images in
                 their software.
               </p>
             </div>
+            </Link>
             <ul className="list-group list-group-flush">
               <li className="list-group-item">Cras justo odio</li>
-              <li className="list-group-item">Dapibus ac facilisis in</li>
-              <li className="list-group-item">Vestibulum at eros</li>
             </ul>
           </div>
         </div>

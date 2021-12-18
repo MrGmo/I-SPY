@@ -44,9 +44,6 @@ function EditFaceDetailPage(props) {
       face_surprise: event.target.elements[15].value,
     }
 
-
-    console.log(objectData)
-
     const data = await FaceAPI.editFace(objectData, params.faceID)
 
     if (data) {

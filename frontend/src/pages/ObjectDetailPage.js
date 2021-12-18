@@ -1,17 +1,14 @@
 import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ObjectAPI from "../api/ObjectAPI";
+import { Image } from "react-bootstrap";
 
 function ObjectDetailPage(props) {
-
-  const [object, setObject] = useState(null)
+  const [object, setObject] = useState(null);
 
   const params = useParams();
   const navigate = useNavigate();
 
-  console.log(object)
-
-  // effects
   useEffect(() => {
     const getObject = async () => {
       const data = await ObjectAPI.fetchObjectByID(params.objectID);
@@ -23,17 +20,14 @@ function ObjectDetailPage(props) {
     getObject();
   }, [params.objectID]);
 
-  // render
   const renderObject = () => {
     if (!object) return null;
-    console.log(object)
     return (
       <div>
-         <ul style={{listStyleType: "none"}}>
-          <li><img src={ object.object_url } alt="pic" /></li>
-          <li>Object Name: { object.object_name }</li>
-          <li>Confidence Level: { object.object_confidence_level }</li>
-          <li>Notes: { object.object_notes }</li>
+        <ul style={{ listStyleType: "none" }}>
+          <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>Object: {object.object_name}</li>
+          <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>Confidence Level: {object.object_confidence_level}</li>
+          <li style={{ fontSize: "1REM" }}>Notes: {object.object_notes}</li>
         </ul>
       </div>
     );
@@ -48,27 +42,33 @@ function ObjectDetailPage(props) {
   };
 
   const editObject = async objectID => {
-    // console.log (objectID)
-    // const data = await ObjectAPI.editObject(objectID);
-    navigate(`/object/${objectID}/edit`)
+    navigate(`/object/${objectID}/edit`);
   };
 
   return (
-    <div>
-      <h2>Object Detail Page</h2>
-      <button
-        onClick={() => deleteObject(params.objectID)}
-        className="btn btn-primary"
-      >
-        Delete Object
-      </button>
-      <button
-        onClick={() => editObject(params.objectID)}
-        className="btn btn-warning"
-      >
-        Edit Object
-      </button>
-      {renderObject()}
+    <div class="container d-flex justify-content-center" style={{ marginTop: "5REM" }}>
+      <div class="card container d-flex justify-content-center" style={{ width: "39.1REM" }}>
+      <h2>Object Details</h2>
+        {object && (
+          <Image src={object.object_url} width={600} height={360} mode="fit" />
+        )}
+        <div class="card-body">
+          {renderObject()}
+          <button
+            style={{ margin: "1REM" }} onClick={() => editObject(params.objectID)}
+            className="btn btn-dark"
+          >
+            Edit Object
+          </button>
+          <button
+          style={{ margin: "1REM" }}
+            onClick={() => deleteObject(params.objectID)}
+            className="btn btn-danger"
+          >
+            Delete Object
+          </button>
+        </div>
+      </div>
     </div>
   );
 }
