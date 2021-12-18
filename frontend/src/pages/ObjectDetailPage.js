@@ -46,6 +46,7 @@ function ObjectDetailPage(props) {
   };
 
   return (
+    
     <div class="container d-flex justify-content-center" style={{ marginTop: "5REM" }}>
       <div class="card container d-flex justify-content-center" style={{ width: "39.1REM" }}>
       <h2>Object Details</h2>

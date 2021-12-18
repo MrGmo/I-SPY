@@ -27,24 +27,23 @@ function FaceDetailPage(props) {
     return (
       <div>
         <ul style={{ listStyleType: "none" }}>
-          <li>Scan Type: {face.scan_type}</li>
-          <li>Face Id: {face.id}</li>
-          <li><Image src={ face.face_url } width={500} height={300} mode='fit' /></li>
-          <li>Face Name: {face.face_name}</li>
-          <li>Face Gender: {face.face_gender}</li>
-          <li>Face Age: {face.face_age}</li>
-          <li>
-            Face Hair Color: {face.face_hair_color1}, {face.face_hair_color2}
+          <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>Name: {face.face_name}</li>
+          <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>Gender: {face.face_gender}</li>
+          <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>Age: {face.face_age}</li>
+          <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>
+            Hair Color: {face.face_hair_color1}, {face.face_hair_color2}
           </li>
-          <li>Face Anger: {face.face_anger}</li>
-          <li>Face Contempt: {face.face_contempt}</li>
-          <li>Face Disgust: {face.face_disgust}</li>
-          <li>Face Fear: {face.face_fear}</li>
-          <li>Face Happiness: {face.face_happiness}</li>
-          <li>Face Neutral: {face.face_neutral}</li>
-          <li>Face Sadness: {face.face_sadness}</li>
-          <li>Face Surprise: {face.face_surprise}</li>
-          <li>Face Notes: {face.face_notes}</li>
+          <hr/>
+          <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>Emotional Profile:</li>
+          <li style={{ fontSize: "1.2REM" }}>Anger: {face.face_anger}</li>
+          <li style={{ fontSize: "1.2REM" }}>Contempt: {face.face_contempt}</li>
+          <li style={{ fontSize: "1.2REM" }}>Disgust: {face.face_disgust}</li>
+          <li style={{ fontSize: "1.2REM" }}>Fear: {face.face_fear}</li>
+          <li style={{ fontSize: "1.2REM" }}>Happiness: {face.face_happiness}</li>
+          <li style={{ fontSize: "1.2REM" }}>Neutral: {face.face_neutral}</li>
+          <li style={{ fontSize: "1.2REM" }}>Sadness: {face.face_sadness}</li>
+          <li style={{ fontSize: "1.2REM" }}>Surprise: {face.face_surprise}</li>
+          <li style={{ fontSize: "1REM" }}>Notes: {face.face_notes}</li>
         </ul>
       </div>
     );
@@ -63,22 +62,31 @@ function FaceDetailPage(props) {
   };
 
   return (
-    <div>
-      <h2>Face Detail Page</h2>
-      <button
-        onClick={() => deleteFace(params.faceID)}
-        className="btn btn-primary"
-      >
-        Delete Face
-      </button>
-      <button
-        onClick={() => editFace(params.faceID)}
-        className="btn btn-warning"
-      >
-        Edit Face
-      </button>
-      {renderFace()}
+
+    <div class="container d-flex justify-content-center" style={{ marginTop: "5REM" }}>
+    <div class="card container d-flex justify-content-center" style={{ width: "39.1REM" }}>
+    <h2>Face Detection Details</h2>
+      {face && (
+        <Image src={face.face_url} width={600} height={360} mode="fit" />
+      )}
+      <div class="card-body">
+        {renderFace()}
+        <button
+          style={{ margin: "1REM" }} onClick={() => editFace(params.faceID)}
+          className="btn btn-dark"
+        >
+          Edit Object
+        </button>
+        <button
+        style={{ margin: "1REM" }}
+          onClick={() => deleteFace(params.faceID)}
+          className="btn btn-danger"
+        >
+          Delete Object
+        </button>
+      </div>
     </div>
+  </div>
   );
 }
 
