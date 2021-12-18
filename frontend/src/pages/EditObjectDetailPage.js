@@ -38,18 +38,18 @@ function EditObjectDetailPage(props) {
 
   return (
     <div
-      class="container d-flex justify-content-center"
+      className="container d-flex justify-content-center"
       style={{ marginTop: "5REM" }}
     >
       <div
-        class="card container d-flex justify-content-center"
+        className="card container d-flex justify-content-center"
         style={{ width: "39.1REM" }}
       >
         <h2>Edit Object Details</h2>
         {object && (
           <Image src={object.object_url} width={600} height={360} mode="fit" />
         )}
-        <div class="card-body" style={{ marginRight: "1.9REM" }}>
+        <div className="card-body" style={{ marginRight: "1.9REM" }}>
           <ul style={{ listStyleType: "none" }}>
             <Form
               onSubmit={event => getNewObject(event)}
@@ -141,9 +141,9 @@ function EditObjectDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontSize: "1REM" }}>
+              <li style={{ fontSize: "1.2REM" }}>
                 <Form.Group>
-                  <Form.Label>Object Notes</Form.Label>
+                  <Form.Label>Notes:</Form.Label>
                   <Form.Control
                     as="textarea"
                     placeholder="object notes"
