@@ -27,8 +27,6 @@ function App() {
   const [objects, setObjects] = useState([])
   const [faces, setFaces] = useState([])
 
-
-  console.log("USER: ", user)
   useEffect(() => {
     const getUser = async () => {
       if (localStorage.getItem("auth-user") !== 'null') {

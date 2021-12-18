@@ -79,7 +79,6 @@ function FaceDetectionPage(props) {
         }
       );
       const azureResponse = await fetchAzureData.json();
-      console.log(azureResponse[0])
       const gender = azureResponse[0].faceAttributes.gender.toUpperCase();
       const age = azureResponse[0].faceAttributes.age;
       const hairColorOne = azureResponse[0].faceAttributes.hair.hairColor[0].color.toUpperCase();

@@ -115,7 +115,7 @@ function EditFaceDetailPage(props) {
                         style={{
                           fontWeight: "bold",
                           fontSize: "1.2REM",
-                          textAlign: "left",
+                          textAlign: "left"
                         }}
                         placeholder="Name"
                         defaultValue={face && face.face_name}

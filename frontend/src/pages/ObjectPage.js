@@ -1,13 +1,13 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from "react";
 import ObjectAPI from "../api/ObjectAPI.js";
-
+import imageHolder from "../img/imageHolder.png";
 
 function ObjectPage(props) {
-  const { objects, setObjects } = props
+  const { objects, setObjects } = props;
   const [image, setImage] = useState([]);
   const [url, setUrl] = useState([]);
-  const [name, setName] = useState('')
-  const [confidenceLevel, setConfidenceLevel] = useState(null)
+  const [name, setName] = useState("");
+  const [confidenceLevel, setConfidenceLevel] = useState(null);
 
   const uploadImage = async () => {
     try {
@@ -27,40 +27,42 @@ function ObjectPage(props) {
     }
   };
 
-  const firstUpdate = useRef(true)
+  const firstUpdate = useRef(true);
 
   useEffect(() => {
-      if (firstUpdate.current) {
-          firstUpdate.current = false;
-          return;
-      }
-      uploadImage()
-      setName(null)
-      setConfidenceLevel(null)
-  }, [image])
-
+    if (firstUpdate.current) {
+      firstUpdate.current = false;
+      return;
+    }
+    uploadImage();
+    setName(null);
+    setConfidenceLevel(null);
+  }, [image]);
 
   const fetchImageData = async () => {
     try {
-      const fetchAzureData = await fetch(process.env.REACT_APP_AZURE_OBJECT_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Ocp-Apim-Subscription-Key": process.env.REACT_APP_AZURE_SUB_KEY_OBJECT,
-        },
-        body: JSON.stringify({ url: url }),
-      });
+      const fetchAzureData = await fetch(
+        process.env.REACT_APP_AZURE_OBJECT_URL,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Ocp-Apim-Subscription-Key":
+              process.env.REACT_APP_AZURE_SUB_KEY_OBJECT,
+          },
+          body: JSON.stringify({ url: url }),
+        }
+      );
       const azureResponse = await fetchAzureData.json();
       const objectName = azureResponse.objects[0].object.toUpperCase();
       const confidence = azureResponse.objects[0].confidence.toFixed(2);
       setName(objectName);
       setConfidenceLevel(confidence);
-      document.querySelector('#file-input').value = null
+      document.querySelector("#file-input").value = null;
     } catch (e) {
       console.log(e);
     }
   };
-
 
   const addObject = async () => {
     const init = {
@@ -68,28 +70,75 @@ function ObjectPage(props) {
       object_url: url,
       object_name: name,
       object_confidence_level: confidenceLevel,
-      object_notes: 'edit to add notes'
-    }
-    const data = await ObjectAPI.addObject(init)
+      object_notes: "edit to add notes",
+    };
+    const data = await ObjectAPI.addObject(init);
     if (data) {
-      setObjects(data)
-      alert('Saved scan to database')
-      window.location.reload()
+      setObjects(data);
+      alert("Saved scan to database");
+      window.location.reload();
     }
-  }
+  };
 
   return (
     <div>
-      <h1>Object Page</h1>
-      <input type="file" id="file-input" onChange={(e) => setImage(e.target.files[0])} />
-      <button type="button" onClick={fetchImageData}>
-        Check Image
-      </button>
-      <h4>Uploaded Image</h4>
-      <img src={url} alt="" width="400px"/>
-      <h6>{name && `What is this? ${ name }`}</h6>
-      <h6>{confidenceLevel && `Confidence Level: ${ confidenceLevel }`}</h6>
-      { name && <button onClick={ addObject }>Save Scan</button>}
+      <div
+        className="container d-flex justify-content-center"
+        style={{ marginTop: "5REM" }}
+      >
+        <div
+          className="card container d-flex justify-content-center"
+          style={{ width: "39.1REM" }}
+        >
+          <h2>Object Page</h2>
+          <input
+            type="file"
+            id="file-input"
+            onChange={e => setImage(e.target.files[0])}
+          />
+          {name === "" ? (
+            <img
+              src={imageHolder}
+              alt="Loading..."
+              width={600}
+              height={360}
+              mode="fit"
+            />
+          ) : (
+            <img src={url} width={600} height={360} mode="fit" />
+          )}
+
+          <div className="card-body">
+            <ul style={{ listStyleType: "none" }}>
+              <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>
+                {name && `What is this? ${name}`}
+              </li>
+              <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>
+                {confidenceLevel && `Confidence Level: ${confidenceLevel}`}
+              </li>
+            </ul>
+
+            {!name && (
+              <button
+                style={{ margin: "1REM" }}
+                onClick={fetchImageData}
+                className="btn btn-secondary"
+              >
+                Check Object
+              </button>
+            )}
+            {name && (
+              <button
+                style={{ margin: "1REM" }}
+                onClick={addObject}
+                className="btn btn-dark"
+              >
+                Save Object
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
