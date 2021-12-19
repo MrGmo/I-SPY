@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import ObjectAPI from "../api/ObjectAPI.js";
 import imageHolder from "../img/imageHolder.png";
 
+
 function ObjectPage(props) {
   const { objects, setObjects } = props;
   const [image, setImage] = useState([]);
@@ -110,10 +111,10 @@ function ObjectPage(props) {
 
           <div className="card-body">
             <ul style={{ listStyleType: "none" }}>
-              <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>
+              <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>
                 {name && `What is this? ${name}`}
               </li>
-              <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>
+              <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>
                 {confidenceLevel && `Confidence Level: ${confidenceLevel}`}
               </li>
             </ul>

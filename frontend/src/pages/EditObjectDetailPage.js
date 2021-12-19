@@ -95,7 +95,7 @@ function EditObjectDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>
+              <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
@@ -118,7 +118,7 @@ function EditObjectDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>
+              <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right", marginLeft: "8REM" }}>
@@ -141,7 +141,7 @@ function EditObjectDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontSize: "1.2REM" }}>
+              <li style={{ fontSize: "1.2REM", color: "black" }}>
                 <Form.Group>
                   <Form.Label>Notes:</Form.Label>
                   <Form.Control

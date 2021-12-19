@@ -27,23 +27,23 @@ function FaceDetailPage(props) {
     return (
       <div>
         <ul style={{ listStyleType: "none" }}>
-          <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>Name: {face.face_name}</li>
-          <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>Gender: {face.face_gender}</li>
-          <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>Age: {face.face_age}</li>
-          <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>
+          <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>Name: {face.face_name}</li>
+          <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>Gender: {face.face_gender}</li>
+          <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>Age: {face.face_age}</li>
+          <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>
             Hair Color: {face.face_hair_color1}, {face.face_hair_color2}
           </li>
           <hr/>
-          <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>Emotional Profile:</li>
-          <li style={{ fontSize: "1.2REM" }}>Anger: {face.face_anger}</li>
-          <li style={{ fontSize: "1.2REM" }}>Contempt: {face.face_contempt}</li>
-          <li style={{ fontSize: "1.2REM" }}>Disgust: {face.face_disgust}</li>
-          <li style={{ fontSize: "1.2REM" }}>Fear: {face.face_fear}</li>
-          <li style={{ fontSize: "1.2REM" }}>Happiness: {face.face_happiness}</li>
-          <li style={{ fontSize: "1.2REM" }}>Neutral: {face.face_neutral}</li>
-          <li style={{ fontSize: "1.2REM" }}>Sadness: {face.face_sadness}</li>
-          <li style={{ fontSize: "1.2REM" }}>Surprise: {face.face_surprise}</li>
-          <li style={{ fontSize: "1REM" }}>Notes: {face.face_notes}</li>
+          <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>Emotional Profile:</li>
+          <li style={{ fontSize: "1.2REM", color: "black" }}>Anger: {face.face_anger}</li>
+          <li style={{ fontSize: "1.2REM", color: "black" }}>Contempt: {face.face_contempt}</li>
+          <li style={{ fontSize: "1.2REM", color: "black" }}>Disgust: {face.face_disgust}</li>
+          <li style={{ fontSize: "1.2REM", color: "black" }}>Fear: {face.face_fear}</li>
+          <li style={{ fontSize: "1.2REM", color: "black" }}>Happiness: {face.face_happiness}</li>
+          <li style={{ fontSize: "1.2REM", color: "black" }}>Neutral: {face.face_neutral}</li>
+          <li style={{ fontSize: "1.2REM", color: "black" }}>Sadness: {face.face_sadness}</li>
+          <li style={{ fontSize: "1.2REM", color: "black" }}>Surprise: {face.face_surprise}</li>
+          <li style={{ fontSize: "1.2REM", color: "black" }}>Notes: {face.face_notes}</li>
         </ul>
       </div>
     );

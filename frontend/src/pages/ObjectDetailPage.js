@@ -25,9 +25,9 @@ function ObjectDetailPage(props) {
     return (
       <div>
         <ul style={{ listStyleType: "none" }}>
-          <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>Object: {object.object_name}</li>
-          <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>Confidence Level: {object.object_confidence_level}</li>
-          <li style={{ fontSize: "1REM" }}>Notes: {object.object_notes}</li>
+          <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>Object: {object.object_name}</li>
+          <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>Confidence Level: {object.object_confidence_level}</li>
+          <li style={{ fontSize: "1.2REM", color: "black" }}>Notes: {object.object_notes}</li>
         </ul>
       </div>
     );
