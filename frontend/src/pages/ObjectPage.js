@@ -91,7 +91,7 @@ function ObjectPage(props) {
           className="card container d-flex justify-content-center"
           style={{ width: "39.1REM" }}
         >
-          <h2>Object Page</h2>
+          <h2>Object Detection</h2>
           <input
             type="file"
             id="file-input"
@@ -125,7 +125,7 @@ function ObjectPage(props) {
                 onClick={fetchImageData}
                 className="btn btn-secondary"
               >
-                Check Object
+                Check Image
               </button>
             )}
             {name && (
@@ -134,7 +134,7 @@ function ObjectPage(props) {
                 onClick={addObject}
                 className="btn btn-dark"
               >
-                Save Object
+                Save Image
               </button>
             )}
           </div>

@@ -104,7 +104,13 @@ function EditFaceDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>
+              <li
+                style={{
+                  fontWeight: "bold",
+                  fontSize: "1.2REM",
+                  color: "black",
+                }}
+              >
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
@@ -115,7 +121,7 @@ function EditFaceDetailPage(props) {
                         style={{
                           fontWeight: "bold",
                           fontSize: "1.2REM",
-                          textAlign: "left"
+                          textAlign: "left",
                         }}
                         placeholder="Name"
                         defaultValue={face && face.face_name}
@@ -125,7 +131,13 @@ function EditFaceDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>
+              <li
+                style={{
+                  fontWeight: "bold",
+                  fontSize: "1.2REM",
+                  color: "black",
+                }}
+              >
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
@@ -147,7 +159,13 @@ function EditFaceDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>
+              <li
+                style={{
+                  fontWeight: "bold",
+                  fontSize: "1.2REM",
+                  color: "black",
+                }}
+              >
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
@@ -169,7 +187,13 @@ function EditFaceDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>
+              <li
+                style={{
+                  fontWeight: "bold",
+                  fontSize: "1.2REM",
+                  color: "black",
+                }}
+              >
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
@@ -191,7 +215,13 @@ function EditFaceDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>
+              <li
+                style={{
+                  fontWeight: "bold",
+                  fontSize: "1.2REM",
+                  color: "black",
+                }}
+              >
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
@@ -214,11 +244,17 @@ function EditFaceDetailPage(props) {
               </li>
 
               <hr />
-              <li style={{ fontWeight: "bold", fontSize: "1.2REM" }}>
+              <li
+                style={{
+                  fontWeight: "bold",
+                  fontSize: "1.2REM",
+                  color: "black",
+                }}
+              >
                 Emotional Profile:
               </li>
 
-              <li style={{ fontSize: "1.2REM" }}>
+              <li style={{ fontSize: "1.2REM", color: "black" }}>
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
@@ -240,7 +276,7 @@ function EditFaceDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontSize: "1.2REM" }}>
+              <li style={{ fontSize: "1.2REM", color: "black" }}>
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
@@ -262,7 +298,7 @@ function EditFaceDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontSize: "1.2REM" }}>
+              <li style={{ fontSize: "1.2REM", color: "black" }}>
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
@@ -284,7 +320,7 @@ function EditFaceDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontSize: "1.2REM" }}>
+              <li style={{ fontSize: "1.2REM", color: "black" }}>
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
@@ -306,7 +342,7 @@ function EditFaceDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontSize: "1.2REM" }}>
+              <li style={{ fontSize: "1.2REM", color: "black" }}>
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
@@ -328,7 +364,7 @@ function EditFaceDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontSize: "1.2REM" }}>
+              <li style={{ fontSize: "1.2REM", color: "black" }}>
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
@@ -350,7 +386,7 @@ function EditFaceDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontSize: "1.2REM" }}>
+              <li style={{ fontSize: "1.2REM", color: "black" }}>
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
@@ -371,7 +407,7 @@ function EditFaceDetailPage(props) {
                   </Row>
                 </Form.Group>
               </li>
-              <li style={{ fontSize: "1.2REM" }}>
+              <li style={{ fontSize: "1.2REM", color: "black" }}>
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
@@ -393,7 +429,7 @@ function EditFaceDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontSize: "1.2REM" }}>
+              <li style={{ fontSize: "1.2REM", color: "black" }}>
                 <Form.Group>
                   <Form.Label>Notes:</Form.Label>
                   <Form.Control

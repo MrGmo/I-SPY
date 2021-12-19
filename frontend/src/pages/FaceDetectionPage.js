@@ -228,7 +228,7 @@ function FaceDetectionPage(props) {
                 onClick={fetchImageData}
                 className="btn btn-secondary"
               >
-                Check Object
+                Check Image
               </button>
             )}
             {genderState && (
@@ -237,7 +237,7 @@ function FaceDetectionPage(props) {
                 onClick={addFace}
                 className="btn btn-dark"
               >
-                Save Object
+                Save Image
               </button>
             )}
           </div>

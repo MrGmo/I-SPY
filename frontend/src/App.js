@@ -7,11 +7,13 @@ import LoginPage from "./pages/LoginPage.js";
 import RegisterPage from "./pages/RegisterPage.js";
 import ObjectDetailPage from "./pages/ObjectDetailPage.js";
 import FaceDetailPage from "./pages/FaceDetailPage.js";
+import AdultDetailPage from "./pages/AdultDetailPage.js";
 import HomePage from "./pages/HomePage.js";
 import ObjectPage from "./pages/ObjectPage.js";
+import AdultPage from "./pages/AdultPage.js";
 import EditObjectDetailPage from "./pages/EditObjectDetailPage.js";
 import EditFaceDetailPage from "./pages/EditFaceDetailPage.js";
-import AdultPage from "./pages/AdultPage.js";
+import EditAdultDetailPage from "./pages/EditAdultDetailPage.js";
 import FaceDetectionPage from "./pages/FaceDetectionPage.js";
 import TagPage from "./pages/TagPage.js";
 import { useState, useEffect } from 'react'
@@ -26,6 +28,7 @@ function App() {
   const [error, setError] = useState(null);
   const [objects, setObjects] = useState([])
   const [faces, setFaces] = useState([])
+  const [adults, setAdults] = useState([])
 
   useEffect(() => {
     const getUser = async () => {
@@ -76,16 +79,18 @@ function App() {
           <AppNav user={user} handleLogout={handleLogout}/>
           <Routes>
             <Route exact path='/' element={<LandingPage/>}/>
-            <Route exact path='/home' element={<HomePage isLoggedIn={isLoggedIn} handleLogout={handleLogout} objects={objects} setObjects={setObjects} faces={faces} setFaces={setFaces}/>}/>
+            <Route exact path='/home' element={<HomePage isLoggedIn={isLoggedIn} handleLogout={handleLogout} objects={objects} setObjects={setObjects} faces={faces} setFaces={setFaces} adults={adults} setAdults={setAdults}/>}/>
             <Route exact path='/login' element={<LoginPage handleLogin={handleLogin} isLoggedIn={isLoggedIn}/>}/>
             <Route exact path='/register' element={<RegisterPage/>}/>
             <Route exact path='/object' element={<ObjectPage objects={objects} setObjects={setObjects}/>}/>
             <Route exact path='/object/:objectID' element={<ObjectDetailPage/>}/>
             <Route exact path="object/:objectID/edit" element={<EditObjectDetailPage />} />
-            <Route exact path='/adult' element={<AdultPage/>}/>
             <Route exact path='/face-detection' element={<FaceDetectionPage faces={faces} setFaces={setFaces}/>}/>
             <Route exact path="face-detection/:faceID/edit" element={<EditFaceDetailPage />} />
             <Route exact path='/face-detection/:faceID' element={<FaceDetailPage />}/>
+            <Route exact path='/adult' element={<AdultPage adults={adults} setAdults={setAdults}/>}/>
+            <Route exact path='/adult/:adultID' element={<AdultDetailPage/>}/>
+            <Route exact path="adult/:adultID/edit" element={<EditAdultDetailPage />} />
             <Route exact path='/tag' element={<TagPage/>}/>
           </Routes>
         </UserContext.Provider>

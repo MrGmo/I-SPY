@@ -59,14 +59,14 @@ function ObjectDetailPage(props) {
             style={{ margin: "1REM" }} onClick={() => editObject(params.objectID)}
             className="btn btn-dark"
           >
-            Edit Object
+            Edit Image
           </button>
           <button
           style={{ margin: "1REM" }}
             onClick={() => deleteObject(params.objectID)}
             className="btn btn-danger"
           >
-            Delete Object
+            Delete Image
           </button>
         </div>
       </div>

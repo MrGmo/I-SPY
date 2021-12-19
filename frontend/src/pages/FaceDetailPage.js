@@ -26,7 +26,7 @@ function FaceDetailPage(props) {
     if (!face) return null;
     return (
       <div>
-        <ul style={{ listStyleType: "none" }}>
+        <ul style={{ listStyleType: "none"  }}>
           <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>Name: {face.face_name}</li>
           <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>Gender: {face.face_gender}</li>
           <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>Age: {face.face_age}</li>
@@ -75,14 +75,14 @@ function FaceDetailPage(props) {
           style={{ margin: "1REM" }} onClick={() => editFace(params.faceID)}
           className="btn btn-dark"
         >
-          Edit Object
+          Edit Image
         </button>
         <button
         style={{ margin: "1REM" }}
           onClick={() => deleteFace(params.faceID)}
           className="btn btn-danger"
         >
-          Delete Object
+          Delete Image
         </button>
       </div>
     </div>

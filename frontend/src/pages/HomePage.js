@@ -5,6 +5,8 @@ import ObjectAPI from "../api/ObjectAPI.js";
 import ObjectList from "../components/ObjectList.js";
 import FaceAPI from "../api/FaceAPI.js";
 import FaceList from "../components/FaceList.js";
+import AdultAPI from "../api/AdultAPI.js";
+import AdultList from "../components/AdultList.js";
 import face from "../img/face.webp";
 import object from "../img/object.jpg";
 import adult from "../img/adult.jpeg";
@@ -12,7 +14,7 @@ import tag from "../img/tag.jpeg";
 
 
 function HomePage(props) {
-  const { objects, setObjects, faces, setFaces } = props;
+  const { objects, setObjects, faces, setFaces, adults, setAdults } = props;
   const userContext = useContext(UserContext);
   const { user } = userContext;
 
@@ -35,6 +37,18 @@ function HomePage(props) {
     };
     getFaces();
   }, []);
+
+  useEffect(() => {
+    const getAdults = async () => {
+      const data = await AdultAPI.fetchAdults();
+      if (data) {
+        setAdults(data);
+      }
+    };
+    getAdults();
+  }, []);
+
+
 
   return (
     <div>
@@ -120,7 +134,7 @@ function HomePage(props) {
             </div>
             </Link>
             <ul className="list-group list-group-flush">
-              <li className="list-group-item">Cras justo odio</li>
+              <AdultList adults={adults}/>
             </ul>
           </div>
         </div>
