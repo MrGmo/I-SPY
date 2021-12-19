@@ -69,6 +69,7 @@ function ObjectPage(props) {
     const init = {
       scan_type: 1,
       object_url: url,
+      name: 'edit to add name',
       object_name: name,
       object_confidence_level: confidenceLevel,
       object_notes: "edit to add notes",

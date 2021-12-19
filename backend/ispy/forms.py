@@ -11,7 +11,7 @@ class ScanForm(ModelForm):
 class ObjectForm(ModelForm):
     class Meta:
         model = Object
-        fields = ['scan_type', 'object_url', 'object_name',
+        fields = ['scan_type', 'object_url', 'name', 'object_name',
                   'object_confidence_level', 'object_notes']
 
 

@@ -47,7 +47,7 @@ class ScanSerializer(serializers.ModelSerializer):
 class ObjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Object
-        fields = ['id', 'scan_type', 'object_url', 'object_name', 'object_confidence_level', 'object_notes']
+        fields = ['id', 'scan_type', 'object_url', 'name', 'object_name', 'object_confidence_level', 'object_notes']
 
 
 class FaceSerializer(serializers.ModelSerializer):

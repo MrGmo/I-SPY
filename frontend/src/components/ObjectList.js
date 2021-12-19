@@ -16,7 +16,7 @@ function ObjectList (props) {
             }}className="list-group-item" object={object}>{ `${index+1}. `}<Link key={index+1} style={{
               color: "blue",
               textDecoration: "none"
-            }} to={`/object/${object.id}/`}>{ object.object_name }</Link></li>
+            }} to={`/object/${object.id}/`}>{ object.name }</Link></li>
       </div>
       )
     })

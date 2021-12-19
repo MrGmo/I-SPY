@@ -9,13 +9,14 @@ class Scan(models.Model):
 
 class Object(models.Model):
     scan_type = models.ForeignKey(Scan, on_delete=models.CASCADE, related_name='scan_object')
+    name = models.CharField(max_length=255)
     object_url = models.TextField(max_length=2000)
     object_name = models.CharField(max_length=255)
     object_confidence_level = models.DecimalField(max_digits=5,decimal_places=2)
     object_notes = models.TextField(max_length=1000)
 
     def __str__(self):
-        return f"Scan Type: {self.scan_type}\nObject URL: {self.object_url}\nName: {self.object_name}\nConfidence Level: {self.object_confidence_level}\nNotes: {self.object_notes}"
+        return f"Scan Type: {self.scan_type}\nObject URL: {self.object_url}\nName: {self.name}\nObject Name: {self.object_name}\nConfidence Level: {self.object_confidence_level}\nNotes: {self.object_notes}"
 
 
 class Face(models.Model):
