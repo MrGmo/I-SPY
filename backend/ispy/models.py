@@ -38,3 +38,16 @@ class Face(models.Model):
 
     def __str__(self):
         return f"Scan Type: {self.scan_type}\nFace URL: {self.face_url}\nName: {self.face_name}\nGender: {self.face_gender}\nAge: {self.face_age}\nHair Color: {self.face_hair_color1}, {self.face_hair_color2}\nAnger: {self.face_anger}\nContempt: {self.face_contempt}\nDisgust: {self.face_disgust}\nFear: {self.face_fear}\nHappiness: {self.face_happiness}\nNeutral: {self.face_neutral}\nSadness: {self.face_sadness}\nSurprise: {self.face_surprise}\nNotes: {self.face_notes}"
+
+
+class Adult(models.Model):
+    scan_type = models.ForeignKey(Scan, on_delete=models.CASCADE, related_name='scan_adult')
+    adult_url = models.TextField(max_length=2000)
+    adult_name = models.CharField(max_length=255)
+    adult_adult_score = models.DecimalField(max_digits=5,decimal_places=2)
+    adult_racy_score = models.DecimalField(max_digits=5,decimal_places=2)
+    adult_gore_score = models.DecimalField(max_digits=5,decimal_places=2)
+    adult_notes = models.TextField(max_length=1000)
+
+    def __str__(self):
+        return f"Scan Type: {self.scan_type}\nAdult URL: {self.adult_url}\nName: {self.adult_name}\nAdult Score: {self.adult_adult_score}\nRacy Score: {self.adult_racy_score}\nGore Score: {self.adult_gore_score}\nNotes: {self.adult_notes}"

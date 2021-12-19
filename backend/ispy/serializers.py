@@ -55,4 +55,8 @@ class FaceSerializer(serializers.ModelSerializer):
         model = Face
         fields = ['id', 'scan_type', 'face_url', 'face_name', 'face_gender', 'face_age', 'face_hair_color1', 'face_hair_color2', 'face_anger', 'face_contempt', 'face_disgust', 'face_fear', 'face_happiness', 'face_neutral', 'face_sadness', 'face_surprise', 'face_notes']
 
-    
+
+class AdultSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Adult
+        fields = ['id', 'scan_type', 'adult_url', 'adult_name', 'adult_adult_score', 'adult_racy_score', 'adult_gore_score', 'adult_notes']
