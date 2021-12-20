@@ -8,15 +8,18 @@ function EditObjectDetailPage(props) {
   const [object, setObject] = useState(null);
   const params = useParams();
 
-  const fetchObjectToBeEdited = async () => {
-    const data = await ObjectAPI.fetchObjectByID(params.objectID);
-    setObject(data);
-  };
-
+  
   useEffect(() => {
+    
+    const fetchObjectToBeEdited = async () => {
+      const data = await ObjectAPI.fetchObjectByID(params.objectID);
+      setObject(data);
+    };
+
     if (object === null) {
       fetchObjectToBeEdited();
     }
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [object]);
 
   const getNewObject = async event => {

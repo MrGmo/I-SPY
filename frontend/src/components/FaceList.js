@@ -8,19 +8,16 @@ function FaceList(props) {
 
     return faces.map((face, index) => {
       return (
-        <div>
+        <div key={index+1}>
           <li
-            key={index + 1}
-            style={{
+          style={{
               color: "blue",
             }}
             className="list-group-item"
             object={face}
           >
             {`${index + 1}. `}
-            <Link
-              key={index + 1}
-              style={{
+            <Link style={{
                 color: "blue",
                 textDecoration: "none",
               }}

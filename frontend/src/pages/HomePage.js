@@ -27,50 +27,43 @@ function HomePage(props) {
         setObjects(data);
       }
     };
-    getObjects();
-  }, []);
-
-  useEffect(() => {
     const getFaces = async () => {
       const data = await FaceAPI.fetchFaces();
       if (data) {
         setFaces(data);
       }
     };
-    getFaces();
-  }, []);
-
-  useEffect(() => {
     const getAdults = async () => {
       const data = await AdultAPI.fetchAdults();
       if (data) {
         setAdults(data);
       }
     };
-    getAdults();
-  }, []);
-
-  useEffect(() => {
     const getTags = async () => {
       const data = await TagAPI.fetchTags();
       if (data) {
         setTags(data);
       }
-    };
+    }
+
+    getObjects();
+    getFaces();
+    getAdults();
     getTags();
-  }, []);
+//eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
   return (
     <div>
       <div>{user && <h1 style={{ color: "white", margin: "2REM", fontWeight: "bold", paddingBottom: "1REM"}}>Welcome {user.username}...</h1>}</div>
-      <div class="container d-flex text-center">
-        <div class="row mx-3">
+      <div className="container d-flex text-center">
+        <div className="row mx-3">
           <div className="card mx-auto" style={{ width: "18rem" }}>
             <Link
               to="/object"
               style={{ textDecoration: "none", color: "black" }}
             >
-              <img className="card-img-top" src={object} alt="image"></img>
+              <img className="card-img-top" src={object} alt="upload"></img>
               <div className="card-body">
                 <h5 className="card-title">Object</h5>
                 <p className="card-text">
@@ -85,13 +78,13 @@ function HomePage(props) {
           </div>
         </div>
 
-        <div class="row mx-3">
+        <div className="row mx-3">
           <div className="card mx-auto" style={{ width: "18rem" }}>
             <Link
               to="/face-detection"
               style={{ textDecoration: "none", color: "black" }}
             >
-              <img className="card-img-top" src={face} alt="image"></img>
+              <img className="card-img-top" src={face} alt="upload"></img>
               <div className="card-body">
                 <h5 className="card-title">Face Detection</h5>
                 <p className="card-text">
@@ -106,13 +99,13 @@ function HomePage(props) {
           </div>
         </div>
 
-        <div class="row mx-3">
+        <div className="row mx-3">
           <div className="card mx-auto" style={{ width: "18rem" }}>
           <Link
               to="/tag"
               style={{ textDecoration: "none", color: "black" }}
             >
-            <img className="card-img-top" src={tag} alt="image"></img>
+            <img className="card-img-top" src={tag} alt="upload"></img>
             <div className="card-body">
               <h5 className="card-title">Tag</h5>
               <p className="card-text">
@@ -127,13 +120,13 @@ function HomePage(props) {
           </div>
         </div>
 
-        <div class="row mx-3">
+        <div className="row mx-3">
           <div className="card mx-auto" style={{ width: "18rem" }}>
           <Link
               to="/adult"
               style={{ textDecoration: "none", color: "black" }}
             >
-            <img className="card-img-top" src={adult} alt="image"></img>
+            <img className="card-img-top" src={adult} alt="upload"></img>
             <div className="card-body">
               <h5 className="card-title">Adult Content</h5>
               <p className="card-text">

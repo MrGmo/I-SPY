@@ -4,7 +4,7 @@ import imageHolder from "../img/imageHolder.png";
 
 
 function FaceDetectionPage(props) {
-  const { faces, setFaces } = props;
+  const { setFaces } = props;
   const [image, setImage] = useState(null);
   const [url, setUrl] = useState(null);
   const [genderState, setGenderState] = useState(null);
@@ -20,31 +20,34 @@ function FaceDetectionPage(props) {
   const [sadnessState, setSadnessState] = useState(null);
   const [surpriseState, setSurpriseState] = useState(null);
 
-  const uploadImage = async () => {
-    try {
-      const data = new FormData();
-      data.append("file", image);
-      data.append("upload_preset", "my_images");
-      data.append("cloud_name", "gmo1");
-
-      const fetchData = await fetch(process.env.REACT_APP_CLOUDINARY_URL, {
-        method: "POST",
-        body: data,
-      });
-      const response = await fetchData.json();
-      setUrl(response.url);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
+  
   const firstUpdate = useRef(true);
-
+  
   useEffect(() => {
+    
+    const uploadImage = async () => {
+      try {
+        const data = new FormData();
+        data.append("file", image);
+        data.append("upload_preset", "my_images");
+        data.append("cloud_name", "gmo1");
+  
+        const fetchData = await fetch(process.env.REACT_APP_CLOUDINARY_URL, {
+          method: "POST",
+          body: data,
+        });
+        const response = await fetchData.json();
+        setUrl(response.url);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+
     if (firstUpdate.current) {
       firstUpdate.current = false;
       return;
     }
+    
     uploadImage();
     setGenderState(null);
     setAgeState(null);
@@ -115,16 +118,6 @@ function FaceDetectionPage(props) {
     }
   };
 
-  const emotionArray = [
-    angerState,
-    contemptState,
-    disgustState,
-    fearState,
-    happinessState,
-    neutralState,
-    sadnessState,
-    surpriseState,
-  ];
 
   const addFace = async () => {
     const init = {
@@ -178,7 +171,7 @@ function FaceDetectionPage(props) {
               mode="fit"
             />
           ) : (
-            <img src={url} width={600} height={360} mode="fit" />
+            <img src={url} width={600} height={360} mode="fit" alt="upload"/>
           )}
 
           <div className="card-body">

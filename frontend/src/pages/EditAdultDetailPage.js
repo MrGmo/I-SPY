@@ -7,16 +7,18 @@ function EditAdultDetailPage(props) {
   const navigate = useNavigate();
   const [adult, setAdult] = useState(null);
   const params = useParams();
-
-  const fetchAdultToBeEdited = async () => {
-    const data = await AdultAPI.fetchAdultByID(params.adultID);
-    setAdult(data);
-  };
-
+  
   useEffect(() => {
+    
+      const fetchAdultToBeEdited = async () => {
+        const data = await AdultAPI.fetchAdultByID(params.adultID);
+        setAdult(data);
+      };
+
     if (adult === null) {
       fetchAdultToBeEdited();
     }
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [adult]);
 
   const getNewObject = async event => {

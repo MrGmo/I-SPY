@@ -10,10 +10,10 @@ function TagList (props) {
 
     return tags.map((tag,index) => {
       return (
-        <div>
-          <li key={index+1}  style={{
+        <div key={index+1}>
+          <li style={{
               color: "blue"
-            }}className="list-group-item" tag={tag}>{ `${index+1}. `}<Link key={index+1} style={{
+            }}className="list-group-item" tag={tag}>{ `${index+1}. `}<Link style={{
               color: "blue",
               textDecoration: "none"
             }} to={`/tag/${tag.id}/`}>{ tag.tag_name }</Link></li>

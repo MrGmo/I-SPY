@@ -8,15 +8,17 @@ function EditFaceDetailPage(props) {
   const [face, setFace] = useState(null);
   const params = useParams();
 
-  const fetchFaceToBeEdited = async () => {
-    const data = await FaceAPI.fetchFaceByID(params.faceID);
-    setFace(data);
-  };
-
+  
   useEffect(() => {
+    const fetchFaceToBeEdited = async () => {
+      const data = await FaceAPI.fetchFaceByID(params.faceID);
+      setFace(data);
+    };
+
     if (face === null) {
       fetchFaceToBeEdited();
     }
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [face]);
 
   const getNewObject = async event => {

@@ -4,37 +4,39 @@ import imageHolder from "../img/imageHolder.png";
 
 
 function ObjectPage(props) {
-  const { objects, setObjects } = props;
+  const { setObjects } = props;
   const [image, setImage] = useState([]);
   const [url, setUrl] = useState([]);
   const [name, setName] = useState("");
   const [confidenceLevel, setConfidenceLevel] = useState(null);
 
-  const uploadImage = async () => {
-    try {
-      const data = new FormData();
-      data.append("file", image);
-      data.append("upload_preset", "my_images");
-      data.append("cloud_name", "gmo1");
-
-      const fetchData = await fetch(process.env.REACT_APP_CLOUDINARY_URL, {
-        method: "POST",
-        body: data,
-      });
-      const response = await fetchData.json();
-      setUrl(response.url);
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
+  
   const firstUpdate = useRef(true);
-
+  
   useEffect(() => {
     if (firstUpdate.current) {
       firstUpdate.current = false;
       return;
     }
+    
+    const uploadImage = async () => {
+      try {
+        const data = new FormData();
+        data.append("file", image);
+        data.append("upload_preset", "my_images");
+        data.append("cloud_name", "gmo1");
+  
+        const fetchData = await fetch(process.env.REACT_APP_CLOUDINARY_URL, {
+          method: "POST",
+          body: data,
+        });
+        const response = await fetchData.json();
+        setUrl(response.url);
+      } catch (e) {
+        console.log(e);
+      }
+    };
+
     uploadImage();
     setName(null);
     setConfidenceLevel(null);
@@ -114,7 +116,7 @@ function ObjectPage(props) {
               mode="fit"
             />
           ) : (
-            <img src={url} width={600} height={360} mode="fit" />
+            <img src={url} width={600} height={360} mode="fit" alt="upload"/>
           )}
 
           <div className="card-body">

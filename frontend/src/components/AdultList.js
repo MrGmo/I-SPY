@@ -10,10 +10,10 @@ function AdultList (props) {
 
     return adults.map((adult,index) => {
       return (
-        <div>
-          <li key={index+1}  style={{
+        <div key={index+1}>
+          <li style={{
               color: "blue"
-            }}className="list-group-item" adult={adult}>{ `${index+1}. `}<Link key={index+1} style={{
+            }}className="list-group-item" adult={adult}>{ `${index+1}. `}<Link style={{
               color: "blue",
               textDecoration: "none"
             }} to={`/adult/${adult.id}/`}>{ adult.adult_name }</Link></li>

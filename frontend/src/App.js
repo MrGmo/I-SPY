@@ -27,7 +27,7 @@ function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [user, setUser] = useState(null);
-  const [error, setError] = useState(null);
+  const [error] = useState(null);
   const [objects, setObjects] = useState([])
   const [faces, setFaces] = useState([])
   const [adults, setAdults] = useState([])

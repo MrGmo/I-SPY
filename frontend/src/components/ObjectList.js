@@ -10,10 +10,10 @@ function ObjectList (props) {
 
     return objects.map((object,index) => {
       return (
-        <div>
-          <li key={index+1}  style={{
+        <div key={index+1}>
+          <li style={{
               color: "blue"
-            }}className="list-group-item" object={object}>{ `${index+1}. `}<Link key={index+1} style={{
+            }}className="list-group-item" object={object}>{ `${index+1}. `}<Link style={{
               color: "blue",
               textDecoration: "none"
             }} to={`/object/${object.id}/`}>{ object.name }</Link></li>

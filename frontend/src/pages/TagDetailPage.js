@@ -16,7 +16,6 @@ function TagDetailPage(props) {
         setTag(data);
       }
     };
-
     getTag();
   }, [params.tagID]);
 

@@ -72,7 +72,7 @@ REST_FRAMEWORK = {
     ),
 }
 
-CORS_ORIGIN_WHITELIST = ['https://localhost:3000', 'http://localhost:3000', 'https://ispy-backend.herokuapp.com']
+CORS_ORIGIN_WHITELIST = ['https://localhost:3000', 'http://localhost:3000', 'https://ispy-backend.herokuapp.com', 'https://ispy-app.herokuapp.com/']
 
 JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=2),

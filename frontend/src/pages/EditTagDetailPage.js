@@ -8,15 +8,16 @@ function EditTagDetailPage(props) {
   const [tag, setTag] = useState(null);
   const params = useParams();
 
-  const fetchTagToBeEdited = async () => {
-    const data = await TagAPI.fetchTagByID(params.tagID);
-    setTag(data);
-  };
-
   useEffect(() => {
+    const fetchTagToBeEdited = async () => {
+      const data = await TagAPI.fetchTagByID(params.tagID);
+      setTag(data);
+    };
+
     if (tag === null) {
       fetchTagToBeEdited();
     }
+    //eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tag]);
 
   const getNewObject = async event => {
@@ -47,9 +48,7 @@ function EditTagDetailPage(props) {
         style={{ width: "39.1REM" }}
       >
         <h2>Edit Tag Details</h2>
-        {tag && (
-          <Image src={tag.tag_url} width={600} height={360} mode="fit" />
-        )}
+        {tag && <Image src={tag.tag_url} width={600} height={360} mode="fit" />}
         <div className="card-body" style={{ marginRight: "1.9REM" }}>
           <ul style={{ listStyleType: "none" }}>
             <Form
@@ -96,13 +95,25 @@ function EditTagDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>
+              <li
+                style={{
+                  fontWeight: "bold",
+                  fontSize: "1.2REM",
+                  color: "black",
+                }}
+              >
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
                       <Form.Label>Name:</Form.Label>
                     </Col>
-                    <Col style={{ padding: "0REM", margin: "-0.3REM", marginBottom: "1REM" }}>
+                    <Col
+                      style={{
+                        padding: "0REM",
+                        margin: "-0.3REM",
+                        marginBottom: "1REM",
+                      }}
+                    >
                       <Form.Control
                         style={{
                           fontWeight: "bold",
@@ -117,37 +128,55 @@ function EditTagDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>
+              <li
+                style={{
+                  fontWeight: "bold",
+                  fontSize: "1.2REM",
+                  color: "black",
+                }}
+              >
                 <Form.Group>
                   <Row>
-                    <Col style={{ textAlign: "right"}}>
+                    <Col style={{ textAlign: "right" }}>
                       <Form.Label>Description:</Form.Label>
                     </Col>
                     <Col style={{ padding: "0REM", margin: "-0.4REM" }}>
-                        <textarea cols="30" rows="3" style={{
+                      <textarea
+                        cols="30"
+                        rows="3"
+                        style={{
                           fontWeight: "bold",
                           fontSize: "1REM",
                           textAlign: "left",
-                        }} plaintext readOnly defaultValue={tag && tag.tag_description}>
-
-                      <Form.Control
-                        style={{
-                          fontWeight: "bold",
-                          fontSize: "1.2REM",
-                          textAlign: "left",
                         }}
-                        placeholder="description"
                         plaintext
                         readOnly
                         defaultValue={tag && tag.tag_description}
-                      />
-                        </textarea>
+                      >
+                        <Form.Control
+                          style={{
+                            fontWeight: "bold",
+                            fontSize: "1.2REM",
+                            textAlign: "left",
+                          }}
+                          placeholder="description"
+                          plaintext
+                          readOnly
+                          defaultValue={tag && tag.tag_description}
+                        />
+                      </textarea>
                     </Col>
                   </Row>
                 </Form.Group>
               </li>
 
-              <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>
+              <li
+                style={{
+                  fontWeight: "bold",
+                  fontSize: "1.2REM",
+                  color: "black",
+                }}
+              >
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right", marginLeft: "8REM" }}>

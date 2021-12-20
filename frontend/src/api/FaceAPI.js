@@ -1,6 +1,5 @@
 const BASE_URL = process.env.REACT_APP_FACE_API_URL
 
-
 const tryCatchFetch = async (url, init = null) => {
   try {
     const response = await fetch(url, init);
