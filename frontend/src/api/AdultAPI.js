@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8000/ispy/" + "adult/"
+const BASE_URL = process.env.REACT_APP_ADULT_API_URL
 
 
 const tryCatchFetch = async (url, init = null) => {

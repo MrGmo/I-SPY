@@ -1,4 +1,5 @@
-const BASE_URL = "http://localhost:8000/"
+const BASE_URL = process.env.REACT_APP_USER_API_URL
+
 
 const login = (userObject) => {
     return fetch(BASE_URL + 'token-auth/', {

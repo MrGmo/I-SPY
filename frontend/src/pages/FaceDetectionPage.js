@@ -127,7 +127,7 @@ function FaceDetectionPage(props) {
 
   const addFace = async () => {
     const init = {
-      scan_type: 2,
+      scan_type: 1,
       face_url: url,
       face_name: "edit to add name",
       face_gender: genderState,

@@ -30,7 +30,6 @@ function AdultPage(props) {
     }
   };
 
-  console.log(url)
   const firstUpdate = useRef(true);
 
   useEffect(() => {

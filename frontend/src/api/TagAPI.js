@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8000/ispy/" + "tag/"
+const BASE_URL = process.env.REACT_APP_TAG_API_URL
 
 
 const tryCatchFetch = async (url, init = null) => {
