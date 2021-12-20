@@ -64,7 +64,7 @@ function HomePage(props) {
     <div>
       <div>{user && <h1 style={{ color: "white", margin: "2REM", fontWeight: "bold", paddingBottom: "1REM"}}>Welcome {user.username}...</h1>}</div>
       <div class="container d-flex text-center">
-        <div class="row mx-4">
+        <div class="row mx-3">
           <div className="card mx-auto" style={{ width: "18rem" }}>
             <Link
               to="/object"
@@ -85,7 +85,7 @@ function HomePage(props) {
           </div>
         </div>
 
-        <div class="row mx-4">
+        <div class="row mx-3">
           <div className="card mx-auto" style={{ width: "18rem" }}>
             <Link
               to="/face-detection"
@@ -106,7 +106,7 @@ function HomePage(props) {
           </div>
         </div>
 
-        <div class="row mx-4">
+        <div class="row mx-3">
           <div className="card mx-auto" style={{ width: "18rem" }}>
           <Link
               to="/tag"
@@ -127,7 +127,7 @@ function HomePage(props) {
           </div>
         </div>
 
-        <div class="row mx-4">
+        <div class="row mx-3">
           <div className="card mx-auto" style={{ width: "18rem" }}>
           <Link
               to="/adult"

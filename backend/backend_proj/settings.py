@@ -1,3 +1,4 @@
+import django_heroku
 from pathlib import Path
 import datetime
 
@@ -71,7 +72,7 @@ REST_FRAMEWORK = {
     ),
 }
 
-CORS_ORIGIN_WHITELIST = ['https://localhost:3000','http://localhost:3000']
+CORS_ORIGIN_WHITELIST = ['https://localhost:3000', 'http://localhost:3000', 'https://ispy-backend.herokuapp.com']
 
 JWT_AUTH = {
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=2),
@@ -137,3 +138,5 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+django_heroku.settings(locals())

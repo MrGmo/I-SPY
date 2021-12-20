@@ -71,19 +71,8 @@ function AppNav(props) {
           </button>
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item px-4" style={{ fontFamily: "cursive" }}>636f6d707574657220766973696f6e</li>
+              <li className="nav-item px-4" style={{ fontFamily: "cursive", color: "black", fontWeight: "normal" }}>636f6d707574657220766973696f6e</li>
             </ul>
-            {/* <form className="d-flex">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              ></input>
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form> */}
             {!onLoginPage && renderButtons()} 
           </div>
         </div>

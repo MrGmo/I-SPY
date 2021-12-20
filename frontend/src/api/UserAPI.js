@@ -1,5 +1,7 @@
+const BASE_URL = "http://localhost:8000/"
+
 const login = (userObject) => {
-    return fetch('http://localhost:8000/token-auth/', {
+    return fetch(BASE_URL + 'token-auth/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -9,7 +11,7 @@ const login = (userObject) => {
   };
   
   const getLoggedInUser = (token) => {
-    return fetch('http://localhost:8000/ispy/current_user/', {
+    return fetch(BASE_URL + 'ispy/current_user/', {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `JWT ${token}`
@@ -18,7 +20,7 @@ const login = (userObject) => {
   };
   
   const signupUser = (userObject) => {
-    return fetch('http://localhost:8000/ispy/users/', {
+    return fetch(BASE_URL + 'ispy/users/', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
