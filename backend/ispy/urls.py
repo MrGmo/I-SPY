@@ -9,6 +9,7 @@ router.register(r'scan', ScanViewSet, basename='scan')
 router.register(r'object', ObjectViewSet, basename='object')
 router.register(r'face', FaceViewSet, basename='face')
 router.register(r'adult', AdultViewSet, basename='adult')
+router.register(r'tag', TagViewSet, basename='adult')
 
 urlpatterns = [
     path('current_user/', current_user),

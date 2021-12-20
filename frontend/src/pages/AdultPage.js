@@ -30,6 +30,7 @@ function AdultPage(props) {
     }
   };
 
+  console.log(url)
   const firstUpdate = useRef(true);
 
   useEffect(() => {
@@ -63,6 +64,7 @@ function AdultPage(props) {
       const adultAdultScore = azureResponse.adult.adultScore.toFixed(2)
       const adultRacyScore = azureResponse.adult.racyScore.toFixed(2);
       const adultGoreScore = azureResponse.adult.goreScore.toFixed(2);
+      console.log(azureResponse)
 
       setAdultScore(adultAdultScore);
       setRacyScore(adultRacyScore);
@@ -131,7 +133,7 @@ function AdultPage(props) {
                 {racyScore && `Racy Score: ${racyScore}`}
               </li>
               <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>
-                {racyScore && `Gore Score: ${racyScore}`}
+                {goreScore && `Gore Score: ${goreScore}`}
               </li>
             </ul>
 

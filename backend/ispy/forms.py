@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from ispy.models import Scan, Object, Face, Adult
+from ispy.models import Scan, Object, Face, Adult, Tag
 
 
 class ScanForm(ModelForm):
@@ -27,3 +27,10 @@ class AdultForm(ModelForm):
         model = Adult
         fields = ['scan_type', 'adult_url', 'adult_name', 'adult_adult_score',
                   'adult_racy_score', 'adult_gore_score', 'adult_notes']
+
+
+class TagForm(ModelForm):
+    class Meta:
+        model = Tag
+        fields = ['scan_type', 'tag_url', 'tag_name', 'tag_description',
+                  'tag_confidence', 'tag_notes']

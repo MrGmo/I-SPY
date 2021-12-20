@@ -54,3 +54,8 @@ class FaceViewSet(viewsets.ModelViewSet):
 class AdultViewSet(viewsets.ModelViewSet):
     queryset = Adult.objects.all()
     serializer_class = AdultSerializer
+
+
+class TagViewSet(viewsets.ModelViewSet):
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer

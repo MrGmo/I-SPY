@@ -52,3 +52,15 @@ class Adult(models.Model):
 
     def __str__(self):
         return f"Scan Type: {self.scan_type}\nAdult URL: {self.adult_url}\nName: {self.adult_name}\nAdult Score: {self.adult_adult_score}\nRacy Score: {self.adult_racy_score}\nGore Score: {self.adult_gore_score}\nNotes: {self.adult_notes}"
+
+
+class Tag(models.Model):
+    scan_type = models.ForeignKey(Scan, on_delete=models.CASCADE, related_name='scan_tag')
+    tag_url = models.TextField(max_length=2000)
+    tag_name = models.CharField(max_length=255)
+    tag_description = models.TextField(max_length=2000)
+    tag_confidence = models.DecimalField(max_digits=5,decimal_places=2)
+    tag_notes = models.TextField(max_length=1000)
+
+    def __str__(self):
+        return f"Scan Type: {self.scan_type}\nTag URL: {self.tag_url}\nName: {self.tag_name}\nDescription: {self.tag_description}\nConfidence Level: {self.tag_confidence}\nNotes: {self.tag_notes}"

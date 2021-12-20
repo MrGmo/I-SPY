@@ -82,6 +82,13 @@ function ObjectPage(props) {
     }
   };
 
+
+
+  const checkHotdog = (name) => {
+    return name.toLowerCase().replace(/\s+/g, '') === 'hotdog'
+  }
+
+
   return (
     <div>
       <div
@@ -113,7 +120,7 @@ function ObjectPage(props) {
           <div className="card-body">
             <ul style={{ listStyleType: "none" }}>
               <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>
-                {name && `What is this? ${name}`}
+                { name && ( checkHotdog(name) ? `What is this? ${name}` : `What is this? NOT A HOTDOG, but a ${name}`) }
               </li>
               <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>
                 {confidenceLevel && `Confidence Level: ${confidenceLevel}`}

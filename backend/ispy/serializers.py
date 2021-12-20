@@ -60,3 +60,10 @@ class AdultSerializer(serializers.ModelSerializer):
     class Meta:
         model = Adult
         fields = ['id', 'scan_type', 'adult_url', 'adult_name', 'adult_adult_score', 'adult_racy_score', 'adult_gore_score', 'adult_notes']
+
+
+class TagSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Tag
+        fields = ['id', 'scan_type', 'tag_url', 'tag_name', 'tag_description',
+                  'tag_confidence', 'tag_notes']
