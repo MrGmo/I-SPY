@@ -110,6 +110,7 @@ function FaceDetectionPage(props) {
       setSurpriseState(surprise);
       document.querySelector("#file-input").value = null;
     } catch (e) {
+      alert('Please upload a picture of a human face. :)')
       console.log(e);
     }
   };
