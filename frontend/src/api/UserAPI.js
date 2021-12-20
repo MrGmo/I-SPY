@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:8000/ispy/"
+const BASE_URL = "http://localhost:8000/"
 
 const login = (userObject) => {
     return fetch(BASE_URL + 'token-auth/', {
