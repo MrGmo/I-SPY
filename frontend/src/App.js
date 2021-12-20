@@ -29,6 +29,7 @@ function App() {
   const [objects, setObjects] = useState([])
   const [faces, setFaces] = useState([])
   const [adults, setAdults] = useState([])
+  const [tags, setTags] = useState([])
 
   useEffect(() => {
     const getUser = async () => {
@@ -79,7 +80,7 @@ function App() {
           <AppNav user={user} handleLogout={handleLogout}/>
           <Routes>
             <Route exact path='/' element={<LandingPage/>}/>
-            <Route exact path='/home' element={<HomePage isLoggedIn={isLoggedIn} handleLogout={handleLogout} objects={objects} setObjects={setObjects} faces={faces} setFaces={setFaces} adults={adults} setAdults={setAdults}/>}/>
+            <Route exact path='/home' element={<HomePage isLoggedIn={isLoggedIn} handleLogout={handleLogout} objects={objects} setObjects={setObjects} faces={faces} setFaces={setFaces} adults={adults} setAdults={setAdults} tags={tags} setTags={setTags} />}/>
             <Route exact path='/login' element={<LoginPage handleLogin={handleLogin} isLoggedIn={isLoggedIn}/>}/>
             <Route exact path='/register' element={<RegisterPage/>}/>
             <Route exact path='/object' element={<ObjectPage objects={objects} setObjects={setObjects}/>}/>
