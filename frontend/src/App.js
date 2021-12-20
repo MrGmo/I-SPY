@@ -8,12 +8,14 @@ import RegisterPage from "./pages/RegisterPage.js";
 import ObjectDetailPage from "./pages/ObjectDetailPage.js";
 import FaceDetailPage from "./pages/FaceDetailPage.js";
 import AdultDetailPage from "./pages/AdultDetailPage.js";
+import TagDetailPage from "./pages/TagDetailPage.js";
 import HomePage from "./pages/HomePage.js";
 import ObjectPage from "./pages/ObjectPage.js";
 import AdultPage from "./pages/AdultPage.js";
 import EditObjectDetailPage from "./pages/EditObjectDetailPage.js";
 import EditFaceDetailPage from "./pages/EditFaceDetailPage.js";
 import EditAdultDetailPage from "./pages/EditAdultDetailPage.js";
+import EditTagDetailPage from "./pages/EditTagDetailPage.js";
 import FaceDetectionPage from "./pages/FaceDetectionPage.js";
 import TagPage from "./pages/TagPage.js";
 import { useState, useEffect } from 'react'
@@ -92,7 +94,9 @@ function App() {
             <Route exact path='/adult' element={<AdultPage adults={adults} setAdults={setAdults}/>}/>
             <Route exact path='/adult/:adultID' element={<AdultDetailPage/>}/>
             <Route exact path="adult/:adultID/edit" element={<EditAdultDetailPage />} />
-            <Route exact path='/tag' element={<TagPage/>}/>
+            <Route exact path='/tag' element={<TagPage tags={tags} setTags={setTags}/>}/>
+            <Route exact path='/tag/:tagID' element={<TagDetailPage/>}/>
+            <Route exact path="tag/:tagID/edit" element={<EditTagDetailPage />} />
           </Routes>
         </UserContext.Provider>
       </Router>
