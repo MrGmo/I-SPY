@@ -159,10 +159,6 @@ function EditTagDetailPage(props) {
                             fontSize: "1.2REM",
                             textAlign: "left",
                           }}
-                          placeholder="description"
-                          plaintext
-                          readOnly
-                          defaultValue={tag && tag.tag_description}
                         />
                       </textarea>
                     </Col>

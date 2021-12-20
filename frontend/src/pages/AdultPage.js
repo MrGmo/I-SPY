@@ -64,7 +64,6 @@ function AdultPage(props) {
       const adultAdultScore = azureResponse.adult.adultScore.toFixed(2)
       const adultRacyScore = azureResponse.adult.racyScore.toFixed(2);
       const adultGoreScore = azureResponse.adult.goreScore.toFixed(2);
-      console.log(azureResponse)
 
       setAdultScore(adultAdultScore);
       setRacyScore(adultRacyScore);
@@ -87,7 +86,6 @@ function AdultPage(props) {
       adult_notes: "edit to add notes",
     };
     const data = await AdultAPI.addAdult(init);
-    console.log(data)
     if (data) {
       setAdults(data);
       alert("Saved scan to database");

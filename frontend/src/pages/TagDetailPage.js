@@ -47,13 +47,13 @@ function TagDetailPage(props) {
 
   return (
     
-    <div class="container d-flex justify-content-center" style={{ marginTop: "5REM" }}>
-      <div class="card container d-flex justify-content-center" style={{ width: "39.1REM" }}>
+    <div className="container d-flex justify-content-center" style={{ marginTop: "5REM" }}>
+      <div className="card container d-flex justify-content-center" style={{ width: "39.1REM" }}>
       <h2>Tag Details</h2>
         {tag && (
           <Image src={tag.tag_url} width={600} height={360} mode="fit" />
         )}
-        <div class="card-body">
+        <div className="card-body">
           {renderObject()}
           <button
             style={{ margin: "1REM" }} onClick={() => editTag(params.tagID)}

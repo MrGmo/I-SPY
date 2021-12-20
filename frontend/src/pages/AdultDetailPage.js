@@ -49,13 +49,13 @@ function AdultDetailPage(props) {
 
   return (
     
-    <div class="container d-flex justify-content-center" style={{ marginTop: "5REM" }}>
-      <div class="card container d-flex justify-content-center" style={{ width: "39.1REM" }}>
+    <div className="container d-flex justify-content-center" style={{ marginTop: "5REM" }}>
+      <div className="card container d-flex justify-content-center" style={{ width: "39.1REM" }}>
       <h2>Adult Content Details</h2>
         {adult && (
           <Image src={adult.adult_url} width={600} height={360} mode="fit" />
         )}
-        <div class="card-body">
+        <div className="card-body">
           {renderObject()}
           <button
             style={{ margin: "1REM" }} onClick={() => editAdult(params.adultID)}
