@@ -94,7 +94,6 @@ function EditTagDetailPage(props) {
                   />
                 </Form.Group>
               </li>
-
               <li
                 style={{
                   fontWeight: "bold",
@@ -127,7 +126,6 @@ function EditTagDetailPage(props) {
                   </Row>
                 </Form.Group>
               </li>
-
               <li
                 style={{
                   fontWeight: "bold",
@@ -165,7 +163,6 @@ function EditTagDetailPage(props) {
                   </Row>
                 </Form.Group>
               </li>
-
               <li
                 style={{
                   fontWeight: "bold",
@@ -194,7 +191,6 @@ function EditTagDetailPage(props) {
                   </Row>
                 </Form.Group>
               </li>
-
               <li style={{ fontSize: "1.2REM", color: "black" }}>
                 <Form.Group>
                   <Form.Label>Notes:</Form.Label>

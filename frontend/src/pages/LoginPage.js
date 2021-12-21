@@ -1,12 +1,16 @@
 import { useNavigate, Link } from "react-router-dom";
+import { useEffect } from 'react'
 
 function LoginPage(props) {
   const { handleLogin, isLoggedIn } = props;
   const navigate = useNavigate();
 
-  if (isLoggedIn) {
-    navigate("/home");
-  }
+  useEffect(() => {
+    if (isLoggedIn) {
+      navigate("/home");
+    }
+    //eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [handleLogin])
 
   return (
     <div>
