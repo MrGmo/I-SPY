@@ -24,7 +24,7 @@ function TagDetailPage(props) {
     return (
       <div>
         <ul style={{ listStyleType: "none" }}>
-          <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>Name: {tag.tag_name}</li>
+          <li style={{ fontSize: "1.2REM", color: "black", fontWeight: "normal" }}>Name: {tag.tag_name}</li>
           <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>Description: {tag.tag_description}</li>
           <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>Confidence Level: {tag.tag_confidence}</li>
           <li style={{ fontSize: "1.2REM", color: "black", fontWeight: "normal" }}>Notes: {tag.tag_notes}</li>

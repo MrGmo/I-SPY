@@ -115,7 +115,7 @@ function EditFaceDetailPage(props) {
               >
                 <Form.Group>
                   <Row>
-                    <Col style={{ textAlign: "right" }}>
+                    <Col style={{ textAlign: "right", fontWeight: "normal" }}>
                       <Form.Label>Name:</Form.Label>
                     </Col>
                     <Col style={{ padding: "0REM", margin: "-0.3REM" }}>
@@ -259,7 +259,7 @@ function EditFaceDetailPage(props) {
               <li style={{ fontSize: "1.2REM", color: "black" }}>
                 <Form.Group>
                   <Row>
-                    <Col style={{ textAlign: "right" }}>
+                    <Col style={{ textAlign: "right" , fontWeight: "bold" }}>
                       <Form.Label>Anger:</Form.Label>
                     </Col>
                     <Col style={{ padding: "0REM", margin: "-0.4REM" }}>
@@ -267,8 +267,9 @@ function EditFaceDetailPage(props) {
                         style={{
                           fontSize: "1.2REM",
                           textAlign: "left",
+                          fontWeight: "bold"
                         }}
-                        placeholder="confidence level"
+                        placeholder="face anger"
                         plaintext
                         readOnly
                         defaultValue={face && face.face_anger}
@@ -278,7 +279,7 @@ function EditFaceDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontSize: "1.2REM", color: "black" }}>
+              <li style={{ fontSize: "1.2REM", color: "black", fontWeight: "bold" }}>
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
@@ -289,6 +290,7 @@ function EditFaceDetailPage(props) {
                         style={{
                           fontSize: "1.2REM",
                           textAlign: "left",
+                          fontWeight: "bold"
                         }}
                         placeholder="confidence level"
                         plaintext
@@ -300,7 +302,7 @@ function EditFaceDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontSize: "1.2REM", color: "black" }}>
+              <li style={{ fontSize: "1.2REM", color: "black", fontWeight: "bold" }}>
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
@@ -311,6 +313,7 @@ function EditFaceDetailPage(props) {
                         style={{
                           fontSize: "1.2REM",
                           textAlign: "left",
+                          fontWeight: "bold"
                         }}
                         placeholder="confidence level"
                         plaintext
@@ -322,7 +325,7 @@ function EditFaceDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontSize: "1.2REM", color: "black" }}>
+              <li style={{ fontSize: "1.2REM", color: "black", fontWeight: "bold" }}>
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
@@ -333,6 +336,7 @@ function EditFaceDetailPage(props) {
                         style={{
                           fontSize: "1.2REM",
                           textAlign: "left",
+                          fontWeight: "bold"
                         }}
                         placeholder="confidence level"
                         plaintext
@@ -344,7 +348,7 @@ function EditFaceDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontSize: "1.2REM", color: "black" }}>
+              <li style={{ fontSize: "1.2REM", color: "black", fontWeight: "bold" }}>
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
@@ -355,6 +359,7 @@ function EditFaceDetailPage(props) {
                         style={{
                           fontSize: "1.2REM",
                           textAlign: "left",
+                          fontWeight: "bold"
                         }}
                         placeholder="confidence level"
                         plaintext
@@ -366,7 +371,7 @@ function EditFaceDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontSize: "1.2REM", color: "black" }}>
+              <li style={{ fontSize: "1.2REM", color: "black", fontWeight: "bold" }}>
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
@@ -377,8 +382,9 @@ function EditFaceDetailPage(props) {
                         style={{
                           fontSize: "1.2REM",
                           textAlign: "left",
+                          fontWeight: "bold"
                         }}
-                        placeholder="confidence level"
+                        placeholder="neutral level"
                         plaintext
                         readOnly
                         defaultValue={face && face.face_neutral}
@@ -388,7 +394,7 @@ function EditFaceDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontSize: "1.2REM", color: "black" }}>
+              <li style={{ fontSize: "1.2REM", color: "black", fontWeight: "bold" }}>
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
@@ -399,8 +405,9 @@ function EditFaceDetailPage(props) {
                         style={{
                           fontSize: "1.2REM",
                           textAlign: "left",
+                          fontWeight: "bold"
                         }}
-                        placeholder="confidence level"
+                        placeholder="sadness level"
                         plaintext
                         readOnly
                         defaultValue={face && face.face_sadness}
@@ -409,7 +416,8 @@ function EditFaceDetailPage(props) {
                   </Row>
                 </Form.Group>
               </li>
-              <li style={{ fontSize: "1.2REM", color: "black" }}>
+
+              <li style={{ fontSize: "1.2REM", color: "black", fontWeight: "bold" }}>
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
@@ -420,6 +428,7 @@ function EditFaceDetailPage(props) {
                         style={{
                           fontSize: "1.2REM",
                           textAlign: "left",
+                          fontWeight: "bold"
                         }}
                         placeholder="confidence level"
                         plaintext
@@ -431,7 +440,7 @@ function EditFaceDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontSize: "1.2REM", color: "black" }}>
+              <li style={{ fontSize: "1.2REM", color: "black", fontWeight: "normal" }}>
                 <Form.Group>
                   <Form.Label>Notes:</Form.Label>
                   <Form.Control

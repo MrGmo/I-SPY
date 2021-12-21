@@ -25,7 +25,7 @@ function AdultDetailPage(props) {
     return (
       <div>
         <ul style={{ listStyleType: "none" }}>
-        <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>Name: {adult.adult_name}</li>
+          <li style={{ fontSize: "1.2REM", color: "black", fontWeight: "normal" }}>Name: {adult.adult_name}</li>
           <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>Adult Score: {adult.adult_adult_score}</li>
           <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>Racy Score: {adult.adult_racy_score}</li>
           <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>Gore Score: {adult.adult_gore_score}</li>

@@ -190,28 +190,28 @@ function FaceDetectionPage(props) {
               </li>
               <hr />
               <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}> {angerState && 'Emotional Profile'} </li>
-              <li style={{ fontSize: "1.2REM", color: "black" }}>
+              <li style={{ fontSize: "1.2REM", color: "black", fontWeight: "bold" }}>
                 {angerState && `Anger: ${angerState}`}
               </li>
-              <li style={{ fontSize: "1.2REM", color: "black" }}>
+              <li style={{ fontSize: "1.2REM", color: "black", fontWeight: "bold" }}>
                 {contemptState && `Contempt: ${contemptState}`}
               </li>
-              <li style={{ fontSize: "1.2REM", color: "black" }}>
+              <li style={{ fontSize: "1.2REM", color: "black", fontWeight: "bold" }}>
                 {disgustState && `Disgust: ${disgustState}`}
               </li>
-              <li style={{ fontSize: "1.2REM", color: "black" }}>
+              <li style={{ fontSize: "1.2REM", color: "black", fontWeight: "bold" }}>
                 {fearState && `Fear: ${fearState}`}{" "}
               </li>
-              <li style={{ fontSize: "1.2REM", color: "black" }}>
+              <li style={{ fontSize: "1.2REM", color: "black", fontWeight: "bold" }}>
                 {happinessState && `Happiness: ${happinessState}`}{" "}
               </li>
-              <li style={{ fontSize: "1.2REM", color: "black" }}>
+              <li style={{ fontSize: "1.2REM", color: "black", fontWeight: "bold" }}>
                 {neutralState && `Neutral: ${neutralState}`}{" "}
               </li>
-              <li style={{ fontSize: "1.2REM", color: "black" }}>
+              <li style={{ fontSize: "1.2REM", color: "black", fontWeight: "bold" }}>
                 {sadnessState && `Sadness: ${sadnessState}`}{" "}
               </li>
-              <li style={{ fontSize: "1.2REM", color: "black" }}>
+              <li style={{ fontSize: "1.2REM", color: "black", fontWeight: "bold" }}>
                 {surpriseState && `Surprise: ${surpriseState}`}{" "}
               </li>
             </ul>

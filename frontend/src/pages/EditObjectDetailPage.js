@@ -167,7 +167,7 @@ function EditObjectDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontSize: "1.2REM", color: "black" }}>
+              <li style={{ fontSize: "1.2REM", color: "black", fontWeight: "normal" }}>
                 <Form.Group>
                   <Form.Label>Notes:</Form.Label>
                   <Form.Control

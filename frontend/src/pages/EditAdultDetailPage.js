@@ -99,7 +99,7 @@ function EditAdultDetailPage(props) {
                 </Form.Group>
               </li>
 
-              <li style={{ fontWeight: "bold", fontSize: "1.2REM", color: "black" }}>
+              <li style={{ fontSize: "1.2REM", color: "black", fontWeight: "normal" }}>
                 <Form.Group>
                   <Row>
                     <Col style={{ textAlign: "right" }}>
