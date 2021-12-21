@@ -6,7 +6,7 @@ This repo contains my I-SPY app. It's an app that scans images using several of 
 
 **Link to project:** https://ispy-app.herokuapp.com/
 
-##How It's Made:
+## How It's Made:
 **Tech Used:** HTML, CSS, JS, PYTHON, REACT, DJANGO, POSTGRESQL
 
 The first thing I needed to figure out in order to build this project was how I was going to host images online. After some research I decided to use Cloudinary because a simple ping of their API would return a url of the image hosted online. This is exactly what I needed for my project because a url string would be much easier to store in my postgresql database then an actual image and I needed an image url to send to my AI models as well. My React frontend was in charge of displaying the image that was uploaded and sending a post request to my cloudinary api. With the hosted url in hand my app could then run several different kinds of scans on the image. The first type of scan I built was object detection. A user can upload any image and the main object in the image will be detected and displayed. It can be a person, car, book, or even a hot dog. Yes, a hot dog. Any image scanned with object detection will actually return a string that says if the image includes a hot dog and if it doesn't, it will identify the main object in the picture regardless. I simply included a function within my code that returns a boolean after checking the object name being returned from the AI model. This is obviously a joke, but I could have easily checked for any item within an image. This idea is very powerful and I wanted to draw attention to it in a funny way. This kind of technology has real world applications like scanning images or video for prohibited items at a place of bussiness or airport.
